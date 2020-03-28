@@ -96,9 +96,13 @@ totalUrl = "https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/total-cases-
 
 #result = requests.request("GET", totalUrl)
 #print(json.dumps(result.json(), indent=4))
-#with open("tmp.txt", "w", encoding="utf-8") as out:
-#    out.write(json.dumps(result.json(), indent=4))
-#exit(0)
+# with open("total_data.txt", "w", encoding="utf-8") as out:
+#     out.write(json.dumps(result.json(), indent=4))
+# result = requests.request("GET", dailyUrl)
+# print(json.dumps(result.json(), indent=4))
+# with open("daily_data.txt", "w", encoding="utf-8") as out:
+#     out.write(json.dumps(result.json(), indent=4))
+# exit(0)
 #print(json.dumps(virus_data, indent=4))
 
 columns = virus_daily_data['data']['columns'][0]
@@ -138,6 +142,22 @@ for i, total_dat in enumerate(total_data):
 # for dat in daily_data:
 #     print(dat)
 
+# Create data.js file
+out_data = ""
+#    [2014,0, -.5,5.7],
+from datetime import datetime
+out_data += "row_data = [\n"
+for row in daily_data:
+    # print(row)
+    tmp = row[0].split("/")
+    entry_date = datetime(year=int(tmp[2]), month=int(tmp[0]), day=int(tmp[1]))
+    out_data += "\t[" + str(entry_date.year) + "," + str(entry_date.month) + "," + str(entry_date.day) + "," + str(row[3]) + "],\n"
+    # print(out_data)
+    # break
+out_data += "];\n"
+with open("data1.js", "w", encoding="UTF-8") as out:
+    out.write(out_data)
+# print(out_data)
 
 htmlout = ""
 htmlout += '<!DOCTYPE HTML>\n'
@@ -162,6 +182,6 @@ htmlout += '<div id="curve_chart" style="width: 900px; height: 500px"></div>\n'
 htmlout += "</body>\n"
 htmlout += "</html>\n"
 
-with open('covid-19.html', "w", encoding="UTF-8") as fout:
-    fout.write(htmlout)
+# with open('covid-19.html', "w", encoding="UTF-8") as fout:
+#     fout.write(htmlout)
 
