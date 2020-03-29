@@ -5,69 +5,13 @@
 import requests
 import json
 from datetime import datetime
+import platform
 
 
-# def addChart(type):
-#     retVal = ""
-#     if type == "Curve":
-#         retVal += "function drawChart() {\n"
-#         retVal += "var data = google.visualization.arrayToDataTable([\n"
-#         retVal += "['Date', 'Sales'],\n"
-#         retVal += "['2004',  1000],\n"
-#         retVal += "['2005',  1170],\n"
-#         retVal += "['2006',  660],\n"
-#         retVal += "['2007',  1030]\n"
-#         retVal += "]);\n"
-#         retVal += "var options = {\n"
-#         retVal += "title: 'Covid-19 Cases',\n"
-#         retVal += "curveType: 'function',\n"
-#         retVal += "legend: { position: 'bottom' }\n"
-#         retVal += "};\n"
 
-#         #retVal += "var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));\n"
-#         retVal += "var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));\n"
-#         retVal += "chart.draw(data, options);\n"
-#         retVal += "}\n"
-#     elif type == "Line":
-#         retVal += "function drawChart() {\n"
-
-#         retVal += "var data = new google.visualization.DataTable();\n"
-#         retVal += "data.addColumn('number', 'Day');\n"
-#         retVal += "data.addColumn('number', 'Guardians of the Galaxy');\n"
-#         retVal += "data.addColumn('number', 'The Avengers');\n"
-#         retVal += "data.addColumn('number', 'Transformers: Age of Extinction');\n"
-
-#         retVal += "data.addRows([\n"
-#         retVal += "[1,  37.8, 80.8, 41.8],\n"
-#         retVal += "[2,  30.9, 69.5, 32.4],\n"
-#         retVal += "[3,  25.4,   57, 25.7],\n"
-#         retVal += "[4,  11.7, 18.8, 10.5],\n"
-#         retVal += "[5,  11.9, 17.6, 10.4],\n"
-#         retVal += "[6,   8.8, 13.6,  7.7],\n"
-#         retVal += "[7,   7.6, 12.3,  9.6],\n"
-#         retVal += "[8,  12.3, 29.2, 10.6],\n"
-#         retVal += "[9,  16.9, 42.9, 14.8],\n"
-#         retVal += "[10, 12.8, 30.9, 11.6],\n"
-#         retVal += "[11,  5.3,  7.9,  4.7],\n"
-#         retVal += "[12,  6.6,  8.4,  5.2],\n"
-#         retVal += "[13,  4.8,  6.3,  3.6],\n"
-#         retVal += "[14,  4.2,  6.2,  3.4]\n"
-#         retVal += "]);\n"
-
-#         retVal += "var options = {\n"
-#         retVal += "chart: {\n"
-#         retVal += "title: 'Box Office Earnings in First Two Weeks of Opening',\n"
-#         retVal += "subtitle: 'in millions of dollars (USD)'\n"
-#         retVal += "},\n"
-#         retVal += "width: 900,\n"
-#         retVal += "height: 500\n"
-#         retVal += "};\n"
-
-#         retVal += "var chart = new google.charts.Line(document.getElementById('linechart_material'));\n"
-
-#         retVal += "chart.draw(data, google.charts.Line.convertOptions(options));\n"
-#         retVal += "}\n"
-#     return retVal
+def getMonth(s):
+    months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    return months.index(s)+1
 
 
 # with open("daily_data.txt", "r") as fin:
@@ -84,6 +28,7 @@ totalUrl = "https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/total-cases-
 result = requests.request('GET', deathUrl)
 
 rawData = result.text
+# print(rawData)
 
 idx = rawData.find("Total Coronavirus Deaths in the United States")
 idx = rawData.find("Highcharts.chart('coronavirus-deaths-linear'", idx)
@@ -109,10 +54,6 @@ tmpData = tmpData.replace("categories:","").strip()
 
 deathDates = tmpData.split(',')
 
-def getMonth(s):
-    months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-    return months.index(s)+1
-
 for i, dat in enumerate(deathDates):
     splt = dat.split(' ')
     tmpDate = datetime(year=2020, month=getMonth(splt[0]), day=int(splt[1]))
@@ -130,7 +71,7 @@ tmpData = tmpData.replace("]","")
 tmpData = tmpData.replace("}","")
 tmpData = tmpData[:len(tmpData)-1].strip()
 deathData = tmpData.split(',')
-#print(deathData)
+# print(deathData)
 # exit(0)
 
 idx = rawData.find("series",idx)
@@ -203,10 +144,16 @@ for i, total_dat in enumerate(total_data):
 
 for i, dat in enumerate(total_data):
     for j, dDate in enumerate(deathDates):
-        if dat[0] == dDate.strftime("%#m/%#d/%Y"):
-            print(dat)
-            total_data[i] = [total_data[i][0], total_data[i][1],deathData[j]]
-            break
+        if platform.system() == "Windows":
+            if dat[0] == dDate.strftime("%#m/%#d/%Y"):
+                print(dat)
+                total_data[i] = [total_data[i][0], total_data[i][1],deathData[j]]
+                break
+        else:
+            if dat[0] == dDate.strftime("%-m/%-d/%Y"):
+                print(dat)
+                total_data[i] = [total_data[i][0], total_data[i][1],deathData[j]]
+                break
 
 # Create data1.js file
 out_data = ""
