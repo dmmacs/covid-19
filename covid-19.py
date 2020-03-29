@@ -74,11 +74,59 @@ import json
 
 # with open("total_data.txt", "r") as fin:
 #     virus_total_data = json.load(fin)
-
+deathUrl = "https://www.worldometers.info/coronavirus/country/us/"
 url = "https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/cases-in-us.html"
 dailyUrl = "https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/us-cases-epi-chart.json"
 totalUrl = "https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/total-cases-onset.json"
 
+
+result = requests.request('GET', deathUrl)
+
+rawData = result.text
+
+idx = rawData.find("Total Coronavirus Deaths in the United States")
+idx = rawData.find("Highcharts.chart('coronavirus-deaths-linear'", idx)
+# print(idx)
+# print(rawData[idx:idx+50])
+idx = rawData.find("xAxis", idx)
+idx1 = rawData.find("yAxis", idx)-2
+
+# print(idx,idx1)
+
+tmpData = rawData[idx:idx1].strip()
+
+
+idx = tmpData.find("{") + 1
+tmpData = tmpData[idx:len(tmpData)-2]
+
+#tmpData = tmpData.replace(",","")
+tmpData = tmpData.replace("[","")
+tmpData = tmpData.replace("]","")
+tmpData = tmpData.replace("}","")
+tmpData = tmpData.replace("\"","")
+tmpData = tmpData.replace("categories:","").strip()
+
+deathDates = tmpData.split(',')
+print(deathDates)
+
+idx = rawData.find('series', idx1)
+idx = rawData.find('data:', idx) + len('data:')
+idx1 = rawData.find("responsive",idx)
+tmpData = rawData[idx:idx1].strip()
+tmpData = tmpData.replace("[","")
+tmpData = tmpData.replace("]","")
+tmpData = tmpData.replace("}","")
+tmpData = tmpData[:len(tmpData)-1].strip()
+deathData = tmpData.split(',')
+print(deathData)
+exit(0)
+
+idx = rawData.find("series",idx)
+
+#print(idx, idx1)
+#print(rawData[idx:idx1+10])
+
+exit(0)
 
 #result = requests.request("GET", url)
 #urlData = result.text
