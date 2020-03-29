@@ -2,19 +2,12 @@
 <head>
   <meta http-equiv="refresh" content="300">
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Dual-Y Example</title>
+  <title>Covid-19 Data</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-  
-
-  <style id="compiled-css" type="text/css">
-      
-  </style>
-
+  <style id="compiled-css" type="text/css"></style>
 </head>
 <body>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -50,29 +43,10 @@
         rows5.push([row_data1[i][0],row_data1[i][1],row_data1[i][2]]);
       }
       for (i = 0; i < rows5.length; i++) {
-        console.log(rows5[i]);
+        // console.log(rows5[i]);
       }
 
       data.addRows(rows5);
-      // var materialOptions = {
-      //   chart: {
-      //     title: 'Cases of Covid-19'
-      //   },
-      //   width: 900,
-      //   height: 500,
-      //   series: {
-      //     // Gives each series an axis name that matches the Y-axis below.
-      //     0: {axis: 'Cases'},
-      //   },
-      //   axes: {
-      //     // Adds labels to each axis; they don't have to match the axis names.
-      //     y: {
-      //       Cases: {label: '# of Cases',format:'decimal'},
-      //   //   x: {format:'MMM d, yyyy'},
-      //     },
-      //     x: {format: 'short'},
-      //   }
-      // };
 
       var classicOptions = {
         title: 'Cases of Covid-19',
@@ -89,11 +63,6 @@
           1: {title: 'Deaths'},
         },
         hAxis: {gridlines: {color:'#FFF',count:'-1'}},
-        // vAxis: {
-        //   viewWindow: {
-        //     max: 30
-        //   }
-        // }
       };
 
       function drawMaterialChart() {
@@ -123,5 +92,13 @@
 <br/>
 <script>document.write(rows2.length)</script>
 -->
+<script>function getDate() {
+  console.log(new Date())
+  document.write(new Date())
+ }
+ </script>
+<div align="right">
+  <p style="font-size:10px;right:auto"> Last Updated: <script>getDate()</script></p>
+</div>
 </body>
 </html>
