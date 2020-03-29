@@ -4,6 +4,7 @@
 #import selenium
 import requests
 import json
+from datetime import datetime
 
 
 # def addChart(type):
@@ -107,7 +108,18 @@ tmpData = tmpData.replace("\"","")
 tmpData = tmpData.replace("categories:","").strip()
 
 deathDates = tmpData.split(',')
-print(deathDates)
+
+def getMonth(s):
+    months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    return months.index(s)+1
+
+for i, dat in enumerate(deathDates):
+    splt = dat.split(' ')
+    tmpDate = datetime(year=2020, month=getMonth(splt[0]), day=int(splt[1]))
+    deathDates[i] = tmpDate
+
+
+# print(deathDates)
 
 idx = rawData.find('series', idx1)
 idx = rawData.find('data:', idx) + len('data:')
@@ -118,15 +130,15 @@ tmpData = tmpData.replace("]","")
 tmpData = tmpData.replace("}","")
 tmpData = tmpData[:len(tmpData)-1].strip()
 deathData = tmpData.split(',')
-print(deathData)
-exit(0)
+#print(deathData)
+# exit(0)
 
 idx = rawData.find("series",idx)
 
 #print(idx, idx1)
 #print(rawData[idx:idx1+10])
 
-exit(0)
+# exit(0)
 
 #result = requests.request("GET", url)
 #urlData = result.text
@@ -178,24 +190,27 @@ vData = virus_total_data['data']['columns'][1]
 
 for i, col in enumerate(columns):
     if i >= 1:
-        total_data.append([col,0])
+        total_data.append([col,0,0])
 
 for i, dat in enumerate(vData):
     if i >= 1:
-        total_data[i-1] = [total_data[i-1][0], dat]
+        total_data[i-1] = [total_data[i-1][0], dat,0]
 
 for i, total_dat in enumerate(total_data):
     for j, dailyDat in enumerate(daily_data):
         if dailyDat[0] == total_dat[0]:
             daily_data[j] = [daily_data[j][0],daily_data[j][1],daily_data[j][2],total_dat[1]]
 
-# for dat in daily_data:
-#     print(dat)
+for i, dat in enumerate(total_data):
+    for j, dDate in enumerate(deathDates):
+        if dat[0] == dDate.strftime("%#m/%#d/%Y"):
+            print(dat)
+            total_data[i] = [total_data[i][0], total_data[i][1],deathData[j]]
+            break
 
-# Create data.js file
+# Create data1.js file
 out_data = ""
 #    [2014,0, -.5,5.7],
-from datetime import datetime
 out_data += "row_data = [\n"
 for row in daily_data:
     # print(row)
@@ -209,7 +224,7 @@ out_data += "];\n"
 out_data1 = ""
 out_data1 += "row_data1 = [\n"
 for row in total_data:
-    out_data1 += "\t[\"" + row[0] + "\"," + str(row[1]) + "],\n"
+    out_data1 += "\t[\"" + row[0] + "\"," + str(row[1]) + "," + str(row[2]) + "],\n"
 
 out_data1 += "];\n"
 
