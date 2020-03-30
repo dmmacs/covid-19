@@ -6,7 +6,7 @@ import requests
 import json
 from datetime import datetime
 import platform
-
+import pytz
 
 
 def getMonth(s):
@@ -133,10 +133,17 @@ if __name__ == "__main__":
 
     out_data1 += "];\n"
 
+    UTC_TZ = pytz.timezone('UTC')
+    Eastern_TZ = pytz.timezone("US/Eastern")
+    Mountain_TZ = pytz.timezone("US/Mountain")
+    AZ_TZ = pytz.timezone("US/Arizona")
+
     try:
         with open("data1.js", "w", encoding="UTF-8") as out:
             out.write(out_data)
             out.write(out_data1)
+            now = datetime.now()
+            out.write("updateTime=" + "\"" + now.astimezone(tz=AZ_TZ).strftime('%d-%b-%Y %I:%M:%S %p %Z') + "\"\n")
     except Exception as exc:
         print(exc)
         exit(-1)

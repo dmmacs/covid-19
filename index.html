@@ -97,8 +97,13 @@
   document.write(new Date())
  }
  </script>
+ <script>function getupdateTime() {
+   console.log(updateTime);
+   document.write(updateTime);
+ }</script>
 <div align="right">
-  <p style="font-size:10px;right:auto"> Last Updated: <script>getDate()</script></p>
+  <p style="font-size:10px;right:auto"> Last Updated: <script>getupdateTime()</script></p>
+  <p><script>getupdateTime</script></p>
 </div>
 </body>
 </html>
