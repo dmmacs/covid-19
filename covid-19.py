@@ -10,6 +10,11 @@ import platform
 import pytz
 import csv
 
+from datetime import datetime
+from datetime import timedelta
+import time
+import os
+
 from contextlib import closing
 from requests import get
 
@@ -74,10 +79,81 @@ def ScrapeData():
     #     if bullet['class'] == "data-track-click":
     #         print(a)
 
+def getRapidApiData():
+    fname = "jsonData.txt"
+    # Load Saved Data First
+    if os.path.exists(fname):
+        with open(fname,"r", encoding="UTF-8") as fin:
+            jsonData = json.load(fin)
+
+    # Get Date from last entry
+    lastFDate = list(jsonData[-1].keys())[0]
+
+    lastDate = datetime.strptime(lastFDate,"%Y-%m-%d")
+
+    now = datetime.now()
+    today = datetime(year=now.year, month=now.month, day=now.day,hour=0, minute=0, second=0)
+
+    url = "https://covid-19-data.p.rapidapi.com/report/country/name"
+    headers = {
+        'x-rapidapi-host': "covid-19-data.p.rapidapi.com",
+        'x-rapidapi-key': "017581f6cfmshc8f39f291c879dfp1140dejsn60deff78a7b2"
+        }
+
+    url = "https://covid-19-data.p.rapidapi.com/country/code"
+    querystring = {"format":"json","code":"USA"}
+    response = requests.request("GET", url, headers=headers, params=querystring)
 
 
-if __name__ == "__main__":
+    if response.status_code == 200:
+        tmpjsonData = response.json()
+        dateStr = f"{now:%Y-%m-%d}"
+        totalCases = tmpjsonData[0]['confirmed']
+        totalDeaths = tmpjsonData[0]['deaths']
 
+        tmpjsonData = jsonData[-1]
+        if dateStr == list(tmpjsonData.keys())[0]:
+            jsonData[-1] = {dateStr:{"cases":totalCases,"deaths":totalDeaths}}
+        else:
+            jsonData.append({dateStr:{"cases":totalCases,"deaths":totalDeaths}})
+
+    # Create data1.js file
+    out_data1 = ""
+    out_data1 += "row_data1 = [\n"
+    for entry in jsonData:
+        #print(entry)
+        key = list(entry.keys())[0]
+        out_data1 += "\t[\"" + key  + "\"" 
+        out_data1 += ","
+        out_data1 += str(entry.get(key).get("cases"))
+        out_data1 += ","
+        out_data1 += str(entry.get(key).get("deaths"))
+        out_data1 += "],\n" # + "\"," + str(row[1]) + "," + str(row[2]) + "],\n"
+
+    out_data1 += "];\n"
+
+    # UTC_TZ = pytz.timezone('UTC')
+    # Eastern_TZ = pytz.timezone("US/Eastern")
+    # Mountain_TZ = pytz.timezone("US/Mountain")
+    AZ_TZ = pytz.timezone("US/Arizona")
+    
+    try:
+        with open("data1.js", "w", encoding="UTF-8") as out:
+            # out.write(out_data)
+            out.write(out_data1)
+            now = datetime.now()
+            out.write("updateTime=" + "\"" + now.astimezone(tz=AZ_TZ).strftime('%d-%b-%Y %I:%M:%S %p %Z') + "\"\n")
+    except Exception as exc:
+        print(exc)
+        exit(-1)
+
+
+
+    with open(fname, "w", encoding="UTF-8") as fout:
+        json.dump(jsonData, fout, indent=4)
+
+
+def getCDCData():
     # ScrapeData()
     # exit(0)
 
@@ -221,3 +297,8 @@ if __name__ == "__main__":
         print(exc)
         exit(-1)
 
+if __name__ == "__main__":
+    #getCDCData()
+
+    getRapidApiData()
+    
