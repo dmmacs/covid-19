@@ -83,8 +83,8 @@ if __name__ == "__main__":
 
     deathUrl = "https://www.worldometers.info/coronavirus/country/us/"
     url = "https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/cases-in-us.html"
-    dailyUrl = "https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/us-cases-epi-chart.json"
-    totalUrl = "https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/total-cases-onset.json"
+    #dailyUrl = "https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/us-cases-epi-chart.json"
+    #totalUrl = "https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/total-cases-onset.json"
     totalUrl = "https://www.cdc.gov//coronavirus/2019-ncov/json/cumm-total-chart-data.json"
 
     result = requests.request('GET', deathUrl)
@@ -160,7 +160,8 @@ if __name__ == "__main__":
             total_data.append([col,0,0])
 
     for i, dat in enumerate(vData):
-        if i >= 1:
+        if i >= 1 and i <= len(total_data):
+            print(i)
             total_data[i-1] = [total_data[i-1][0], dat,0]
 
     # for i, total_dat in enumerate(total_data):
