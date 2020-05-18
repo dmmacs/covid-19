@@ -80,11 +80,18 @@ def ScrapeData():
     #         print(a)
 
 def getRapidApiData():
+
+    print("Running Rapid Data")
     fname = "jsonData.txt"
     # Load Saved Data First
     if os.path.exists(fname):
         with open(fname,"r", encoding="UTF-8") as fin:
             jsonData = json.load(fin)
+    fname1 = "az.txt"
+    if os.path.exists(fname1):
+        with open(fname1,"r", encoding="UTF-8") as fin:
+            jsonDataAZ = json.load(fin)
+
 
     # Get Date from last entry
     lastFDate = list(jsonData[-1].keys())[0]
@@ -104,7 +111,6 @@ def getRapidApiData():
     querystring = {"format":"json","code":"USA"}
     response = requests.request("GET", url, headers=headers, params=querystring)
 
-
     if response.status_code == 200:
         tmpjsonData = response.json()
         dateStr = f"{now:%Y-%m-%d}"
@@ -117,10 +123,50 @@ def getRapidApiData():
         else:
             jsonData.append({dateStr:{"cases":totalCases,"deaths":totalDeaths}})
 
+    url2 = "https://covid-19-data.p.rapidapi.com/report/country/name"
+    querystring = {"format":"json","code":"USA"}
+    dateStr = f"{now:%Y-%m-%d}"
+#    dateStr = f"{now:%Y-%m-16}"
+    querystring = {"date-format":"YYYY-MM-DD","format":"json","date":dateStr,"name":"USA"}
+    response = requests.request("GET", url2, headers=headers, params=querystring)
+    if response.status_code == 200:
+        tmpjsonData = response.json()
+        dateStr = f"{now:%Y-%m-%d}"
+        totalCases = 0
+        totalDeaths = 0
+        totalRecovered = 0
+        for prov in tmpjsonData[0]['provinces']:
+            if prov['province'] == 'Arizona':
+                totalCases += prov['confirmed']
+                totalDeaths += prov['deaths']
+                totalRecovered += prov['recovered']
+                break
+        if totalCases > 0:
+            tmpjsonData = jsonDataAZ[-1]
+            if dateStr == list(tmpjsonData.keys())[0]:
+                jsonDataAZ[-1] = {dateStr:{"cases":totalCases,"deaths":totalDeaths}}
+            else:
+                jsonDataAZ.append({dateStr:{"cases":totalCases,"deaths":totalDeaths}})
+
     # Create data1.js file
-    out_data1 = ""
+    out_data1 = "//Rapid API Data\n"
     out_data1 += "row_data1 = [\n"
     for entry in jsonData:
+        #print(entry)
+        key = list(entry.keys())[0]
+        out_data1 += "\t[\"" + key  + "\"" 
+        out_data1 += ","
+        out_data1 += str(entry.get(key).get("cases"))
+        out_data1 += ","
+        out_data1 += str(entry.get(key).get("deaths"))
+        out_data1 += "],\n" # + "\"," + str(row[1]) + "," + str(row[2]) + "],\n"
+
+    out_data1 += "];\n"
+
+    # Create data1.js file
+    out_data1 += "//Rapid API Data\n"
+    out_data1 += "row_dataAZ = [\n"
+    for entry in jsonDataAZ:
         #print(entry)
         key = list(entry.keys())[0]
         out_data1 += "\t[\"" + key  + "\"" 
@@ -152,6 +198,8 @@ def getRapidApiData():
     with open(fname, "w", encoding="UTF-8") as fout:
         json.dump(jsonData, fout, indent=4)
 
+    with open (fname1, "w", encoding="UTF-8") as fout:
+        json.dump(jsonDataAZ, fout, indent=4)
 
 def getCDCData():
     # ScrapeData()
@@ -275,12 +323,12 @@ def getCDCData():
         # break
     out_data += "];\n"
 
-    out_data1 = ""
-    out_data1 += "row_data1 = [\n"
-    for row in total_data:
-        out_data1 += "\t[\"" + row[0] + "\"," + str(row[1]) + "," + str(row[2]) + "],\n"
+    # out_data1 = ""
+    # out_data1 += "row_data1 = [\n"
+    # for row in total_data:
+    #     out_data1 += "\t[\"" + row[0] + "\"," + str(row[1]) + "," + str(row[2]) + "],\n"
 
-    out_data1 += "];\n"
+    # out_data1 += "];\n"
 
     UTC_TZ = pytz.timezone('UTC')
     Eastern_TZ = pytz.timezone("US/Eastern")
