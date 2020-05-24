@@ -6,6 +6,7 @@ import requests
 from requests.exceptions import RequestException
 import json
 from datetime import datetime
+from datetime import timedelta
 import platform
 import pytz
 import csv
@@ -94,12 +95,12 @@ def getRapidApiData():
 
 
     # Get Date from last entry
-    lastFDate = list(jsonData[-1].keys())[0]
+    # lastFDate = list(jsonData[-1].keys())[0]
 
-    lastDate = datetime.strptime(lastFDate,"%Y-%m-%d")
+    # lastDate = datetime.strptime(lastFDate,"%Y-%m-%d")
 
     now = datetime.now()
-    today = datetime(year=now.year, month=now.month, day=now.day,hour=0, minute=0, second=0)
+    # today = datetime(year=now.year, month=now.month, day=now.day,hour=0, minute=0, second=0)
 
     url = "https://covid-19-data.p.rapidapi.com/report/country/name"
     headers = {
@@ -125,13 +126,14 @@ def getRapidApiData():
 
     url2 = "https://covid-19-data.p.rapidapi.com/report/country/name"
     querystring = {"format":"json","code":"USA"}
-    dateStr = f"{now:%Y-%m-%d}"
+    yesterday = now + timedelta(days=-1)
+    dateStr = f"{yesterday:%Y-%m-%d}"
 #    dateStr = f"{now:%Y-%m-16}"
     querystring = {"date-format":"YYYY-MM-DD","format":"json","date":dateStr,"name":"USA"}
     response = requests.request("GET", url2, headers=headers, params=querystring)
     if response.status_code == 200:
         tmpjsonData = response.json()
-        dateStr = f"{now:%Y-%m-%d}"
+        dateStr = f"{yesterday:%Y-%m-%d}"
         totalCases = 0
         totalDeaths = 0
         totalRecovered = 0
@@ -201,149 +203,149 @@ def getRapidApiData():
     with open (fname1, "w", encoding="UTF-8") as fout:
         json.dump(jsonDataAZ, fout, indent=4)
 
-def getCDCData():
-    # ScrapeData()
-    # exit(0)
+# def getCDCData():
+#     # ScrapeData()
+#     # exit(0)
 
-    deathUrl = "https://www.worldometers.info/coronavirus/country/us/"
-    url = "https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/cases-in-us.html"
-    #dailyUrl = "https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/us-cases-epi-chart.json"
-    #totalUrl = "https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/total-cases-onset.json"
-    totalUrl = "https://www.cdc.gov//coronavirus/2019-ncov/json/cumm-total-chart-data.json"
+#     deathUrl = "https://www.worldometers.info/coronavirus/country/us/"
+#     # url = "https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/cases-in-us.html"
+#     #dailyUrl = "https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/us-cases-epi-chart.json"
+#     #totalUrl = "https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/total-cases-onset.json"
+#     totalUrl = "https://www.cdc.gov//coronavirus/2019-ncov/json/cumm-total-chart-data.json"
 
-    result = requests.request('GET', deathUrl)
+#     result = requests.request('GET', deathUrl)
 
-    rawData = result.text
+#     rawData = result.text
 
-    idx = rawData.find("Total Coronavirus Deaths in the United States")
-    idx = rawData.find("Highcharts.chart('coronavirus-deaths-linear'", idx)
+#     idx = rawData.find("Total Coronavirus Deaths in the United States")
+#     idx = rawData.find("Highcharts.chart('coronavirus-deaths-linear'", idx)
 
-    idx = rawData.find("xAxis", idx)
-    idx1 = rawData.find("yAxis", idx)-2
+#     idx = rawData.find("xAxis", idx)
+#     idx1 = rawData.find("yAxis", idx)-2
 
-    tmpData = rawData[idx:idx1].strip()
+#     tmpData = rawData[idx:idx1].strip()
 
 
-    idx = tmpData.find("{") + 1
-    tmpData = tmpData[idx:len(tmpData)-2]
+#     idx = tmpData.find("{") + 1
+#     tmpData = tmpData[idx:len(tmpData)-2]
 
-    tmpData = tmpData.replace("[","")
-    tmpData = tmpData.replace("]","")
-    tmpData = tmpData.replace("}","")
-    tmpData = tmpData.replace("\"","")
-    tmpData = tmpData.replace("categories:","").strip()
+#     tmpData = tmpData.replace("[","")
+#     tmpData = tmpData.replace("]","")
+#     tmpData = tmpData.replace("}","")
+#     tmpData = tmpData.replace("\"","")
+#     tmpData = tmpData.replace("categories:","").strip()
 
-    deathDates = tmpData.split(',')
+#     deathDates = tmpData.split(',')
 
-    for i, dat in enumerate(deathDates):
-        splt = dat.split(' ')
-        tmpDate = datetime(year=2020, month=getMonth(splt[0]), day=int(splt[1]))
-        deathDates[i] = tmpDate
+#     for i, dat in enumerate(deathDates):
+#         splt = dat.split(' ')
+#         tmpDate = datetime(year=2020, month=getMonth(splt[0]), day=int(splt[1]))
+#         deathDates[i] = tmpDate
 
-    idx = rawData.find('series', idx1)
-    idx = rawData.find('data:', idx) + len('data:')
-    idx1 = rawData.find("responsive",idx)
-    tmpData = rawData[idx:idx1].strip()
-    tmpData = tmpData.replace("[","")
-    tmpData = tmpData.replace("]","")
-    tmpData = tmpData.replace("}","")
-    tmpData = tmpData[:len(tmpData)-1].strip()
-    deathData = tmpData.split(',')
+#     idx = rawData.find('series', idx1)
+#     idx = rawData.find('data:', idx) + len('data:')
+#     idx1 = rawData.find("responsive",idx)
+#     tmpData = rawData[idx:idx1].strip()
+#     tmpData = tmpData.replace("[","")
+#     tmpData = tmpData.replace("]","")
+#     tmpData = tmpData.replace("}","")
+#     tmpData = tmpData[:len(tmpData)-1].strip()
+#     deathData = tmpData.split(',')
 
-    idx = rawData.find("series",idx)
-    result = requests.request("GET", totalUrl)
-    virus_total_data = result.json()
+#     idx = rawData.find("series",idx)
+#     result = requests.request("GET", totalUrl)
+#     virus_total_data = result.json()
     
-    # result = requests.request("GET", dailyUrl)
-    # virus_daily_data = result.json()
+#     # result = requests.request("GET", dailyUrl)
+#     # virus_daily_data = result.json()
 
-    # columns = virus_daily_data['data']['columns'][0]
+#     # columns = virus_daily_data['data']['columns'][0]
 
-    daily_data = []
-    total_data = []
-    # for i, col in enumerate(columns):
-    #     if i >= 1:
-    #         daily_data.append([col,0,0,0])
-    #     # print(daily_data[-1])
+#     daily_data = []
+#     total_data = []
+#     # for i, col in enumerate(columns):
+#     #     if i >= 1:
+#     #         daily_data.append([col,0,0,0])
+#     #     # print(daily_data[-1])
 
-    # vData = virus_daily_data['data']['columns'][1]
+#     # vData = virus_daily_data['data']['columns'][1]
 
-    # total = 0
-    # for i,dat in enumerate(vData):
-    #     if i >= 1:
-    #         total += int(dat)
-    #         daily_data[i-1] = [daily_data[i-1][0], dat, total,0]
-    #         # print(daily_data[i])
+#     # total = 0
+#     # for i,dat in enumerate(vData):
+#     #     if i >= 1:
+#     #         total += int(dat)
+#     #         daily_data[i-1] = [daily_data[i-1][0], dat, total,0]
+#     #         # print(daily_data[i])
 
-    #columns = virus_total_data['data']['columns'][0]
-    columns = virus_total_data[0]
-    vData = virus_total_data[1]
+#     #columns = virus_total_data['data']['columns'][0]
+#     columns = virus_total_data[0]
+#     vData = virus_total_data[1]
 
-    for i, col in enumerate(columns):
-        if i >= 1:
-            total_data.append([col,0,0])
+#     for i, col in enumerate(columns):
+#         if i >= 1:
+#             total_data.append([col,0,0])
 
-    for i, dat in enumerate(vData):
-        if i >= 1 and i <= len(total_data):
-            print(i)
-            total_data[i-1] = [total_data[i-1][0], dat,0]
+#     for i, dat in enumerate(vData):
+#         if i >= 1 and i <= len(total_data):
+#             print(i)
+#             total_data[i-1] = [total_data[i-1][0], dat,0]
 
-    # for i, total_dat in enumerate(total_data):
-    #     for j, dailyDat in enumerate(daily_data):
-    #         if dailyDat[0] == total_dat[0]:
-    #             daily_data[j] = [daily_data[j][0],daily_data[j][1],daily_data[j][2],total_dat[1]]
+#     # for i, total_dat in enumerate(total_data):
+#     #     for j, dailyDat in enumerate(daily_data):
+#     #         if dailyDat[0] == total_dat[0]:
+#     #             daily_data[j] = [daily_data[j][0],daily_data[j][1],daily_data[j][2],total_dat[1]]
 
-    for i, dat in enumerate(total_data):
-        tDate = datetime.strptime(dat[0],"%m/%d/%Y")
-        for j, dDate in enumerate(deathDates):
-            if (tDate-dDate).days == 0:
-                total_data[i] = [total_data[i][0], total_data[i][1],deathData[j]]
-            # if platform.system() == "Windows":
-            #     if dat[0] == dDate.strftime("%#m/%#d/%Y"):
-            #         # print(dat)
-            #         total_data[i] = [total_data[i][0], total_data[i][1],deathData[j]]
-            #         break
-            # else:
-            #     if dat[0] == dDate.strftime("%-m/%-d/%Y"):
-            #         # print(dat)
-            #         total_data[i] = [total_data[i][0], total_data[i][1],deathData[j]]
-            #         break
+#     for i, dat in enumerate(total_data):
+#         tDate = datetime.strptime(dat[0],"%m/%d/%Y")
+#         for j, dDate in enumerate(deathDates):
+#             if (tDate-dDate).days == 0:
+#                 total_data[i] = [total_data[i][0], total_data[i][1],deathData[j]]
+#             # if platform.system() == "Windows":
+#             #     if dat[0] == dDate.strftime("%#m/%#d/%Y"):
+#             #         # print(dat)
+#             #         total_data[i] = [total_data[i][0], total_data[i][1],deathData[j]]
+#             #         break
+#             # else:
+#             #     if dat[0] == dDate.strftime("%-m/%-d/%Y"):
+#             #         # print(dat)
+#             #         total_data[i] = [total_data[i][0], total_data[i][1],deathData[j]]
+#             #         break
 
 
-    # Create data1.js file
-    out_data = ""
-    #    [2014,0, -.5,5.7],
-    out_data += "row_data = [\n"
-    for row in daily_data:
-        # print(row)
-        tmp = row[0].split("/")
-        entry_date = datetime(year=int(tmp[2]), month=int(tmp[0]), day=int(tmp[1]))
-        out_data += "\t[" + str(entry_date.year) + "," + str(entry_date.month-1) + "," + str(entry_date.day) + "," + str(row[3]) + "],\n"
-        # print(out_data)
-        # break
-    out_data += "];\n"
+#     # Create data1.js file
+#     out_data = ""
+#     #    [2014,0, -.5,5.7],
+#     out_data += "row_data = [\n"
+#     for row in daily_data:
+#         # print(row)
+#         tmp = row[0].split("/")
+#         entry_date = datetime(year=int(tmp[2]), month=int(tmp[0]), day=int(tmp[1]))
+#         out_data += "\t[" + str(entry_date.year) + "," + str(entry_date.month-1) + "," + str(entry_date.day) + "," + str(row[3]) + "],\n"
+#         # print(out_data)
+#         # break
+#     out_data += "];\n"
 
-    # out_data1 = ""
-    # out_data1 += "row_data1 = [\n"
-    # for row in total_data:
-    #     out_data1 += "\t[\"" + row[0] + "\"," + str(row[1]) + "," + str(row[2]) + "],\n"
+#     # out_data1 = ""
+#     # out_data1 += "row_data1 = [\n"
+#     # for row in total_data:
+#     #     out_data1 += "\t[\"" + row[0] + "\"," + str(row[1]) + "," + str(row[2]) + "],\n"
 
-    # out_data1 += "];\n"
+#     # out_data1 += "];\n"
 
-    UTC_TZ = pytz.timezone('UTC')
-    Eastern_TZ = pytz.timezone("US/Eastern")
-    Mountain_TZ = pytz.timezone("US/Mountain")
-    AZ_TZ = pytz.timezone("US/Arizona")
+#     # UTC_TZ = pytz.timezone('UTC')
+#     # Eastern_TZ = pytz.timezone("US/Eastern")
+#     # Mountain_TZ = pytz.timezone("US/Mountain")
+#     # AZ_TZ = pytz.timezone("US/Arizona")
 
-    try:
-        with open("data1.js", "w", encoding="UTF-8") as out:
-            # out.write(out_data)
-            out.write(out_data1)
-            now = datetime.now()
-            out.write("updateTime=" + "\"" + now.astimezone(tz=AZ_TZ).strftime('%d-%b-%Y %I:%M:%S %p %Z') + "\"\n")
-    except Exception as exc:
-        print(exc)
-        exit(-1)
+#     # try:
+#     #     with open("data1.js", "w", encoding="UTF-8") as out:
+#     #         # out.write(out_data)
+#     #         out.write(out_data1)
+#     #         now = datetime.now()
+#     #         out.write("updateTime=" + "\"" + now.astimezone(tz=AZ_TZ).strftime('%d-%b-%Y %I:%M:%S %p %Z') + "\"\n")
+#     # except Exception as exc:
+#     #     print(exc)
+#     #     exit(-1)
 
 if __name__ == "__main__":
     #getCDCData()
