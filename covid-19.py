@@ -15,6 +15,7 @@ from datetime import datetime
 from datetime import timedelta
 import time
 import os
+import shutil
 
 from contextlib import closing
 from requests import get
@@ -112,6 +113,7 @@ def getRapidApiData():
     querystring = {"format":"json","code":"USA"}
     response = requests.request("GET", url, headers=headers, params=querystring)
 
+    fileDateStr = ""
     if response.status_code == 200:
         tmpjsonData = response.json()
         dateStr = f"{now:%Y-%m-%d}"
@@ -196,9 +198,15 @@ def getRapidApiData():
         exit(-1)
 
 
-
+    
     with open(fname, "w", encoding="UTF-8") as fout:
         json.dump(jsonData, fout, indent=4)
+
+
+
+    fileDateStr = f"{now:%Y-%m-%d_%H%M%S}"
+
+    shutil.copyfile(fname1, fileDateStr + "-" + fname1)
 
     with open (fname1, "w", encoding="UTF-8") as fout:
         json.dump(jsonDataAZ, fout, indent=4)
