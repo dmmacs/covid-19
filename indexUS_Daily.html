@@ -42,7 +42,6 @@
             myData.addColumn('number', 'cases');
             myData.addColumn('number', 'deaths');
 
-            //console.log(row_data1.length)
             var splt = row_data1[0][0].split("-");
             var year = parseInt(splt[0]);
             var month = parseInt(splt[1]) - 1;
@@ -54,13 +53,22 @@
                 var year = parseInt(splt[0]);
                 var month = parseInt(splt[1]) - 1;
                 var day = parseInt(splt[2]);
+                var cases = row_data1[i][1]-prevCases;
+                if (cases < 0)
+                {
+                  cases = 0;
+                }
+                var deaths = row_data1[i][2]-prevDeaths;
+                if (deaths < 0)
+                {
+                  deaths = 0;
+                }
                 myData.addRows([
-                    [{v: new Date(year,month,day)},row_data1[i][1]-prevCases,row_data1[i][2]-prevDeaths],
+                    [{v: new Date(year,month,day)},cases,deaths],
                 ]);
                 prevCases = row_data1[i][1];
                 prevDeaths = row_data1[i][2];                
             }
-            console.log(myData);
             materialChart.draw(myData, google.charts.Bar.convertOptions(materialOptions));
         }
 
