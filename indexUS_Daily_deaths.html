@@ -49,13 +49,13 @@
                 var year = parseInt(splt[0]);
                 var month = parseInt(splt[1]) - 1;
                 var day = parseInt(splt[2]);
-                var cases = row_data1[i][1]-prevCases;
-                if (cases < 0)
+                var deaths = row_data1[i][2]-prevDeaths;
+                if (deaths < 0)
                 {
-                  cases = 0;
+                  deaths = 0;
                 }
                 myData.addRows([
-                    [{v: new Date(year,month,day)},cases]
+                    [{v: new Date(year,month,day)},deaths]
                 ]);
                 prevDeaths = row_data1[i][2];
                 // prevDeaths = row_data1[i][2];                
