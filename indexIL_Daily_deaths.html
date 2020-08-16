@@ -15,15 +15,15 @@
         var materialOptions = {
           width: 900,
           chart: {
-            title: 'Number of AZ Cases Daily',
+            title: 'Number of IL Deaths Daily',
           },
           series: {
-            0: { axis: 'cases' }, // Bind series 0 to an axis named 'cases'.
+            0: { axis: 'deaths' }, // Bind series 0 to an axis named 'cases'.
             // 1: { axis: 'deaths' } // Bind series 1 to an axis named 'deaths'.
           },
           axes: {
             y: {
-              cases: {label: 'cases'}, // Left y-axis.
+              deaths: {label: 'deaths'}, // Left y-axis.
             //   deaths: {side: 'right', label: 'Deaths'} // Right y-axis.
             }
           }
@@ -34,31 +34,31 @@
 
             var myData = new google.visualization.DataTable();
             myData.addColumn('date', 'Date');
-            myData.addColumn('number', 'cases');
+            myData.addColumn('number', 'deaths');
             // myData.addColumn('number', 'deaths');
 
             //console.log(row_data1.length)
-            var splt = row_dataAZ[0][0].split("-");
+            var splt = row_dataIL[0][0].split("-");
             var year = parseInt(splt[0]);
             var month = parseInt(splt[1]) - 1;
             var day = parseInt(splt[2]);
-            var prevCases = row_dataAZ[0][1];
-            var prevDeaths = row_dataAZ[0][2];
-            for (i = 1; i < row_dataAZ.length; i++) {
-                var splt = row_dataAZ[i][0].split("-");
+            var prevCases = row_dataIL[0][1];
+            var prevDeaths = row_dataIL[0][2];
+            for (i = 1; i < row_dataIL.length; i++) {
+                var splt = row_dataIL[i][0].split("-");
                 var year = parseInt(splt[0]);
                 var month = parseInt(splt[1]) - 1;
                 var day = parseInt(splt[2]);
-                var cases = row_dataAZ[i][1]-prevCases;
-                if (cases < 0)
+                var deaths = row_dataIL[i][2]-prevDeaths;
+                if (deaths < 0)
                 {
-                  cases = 0;
+                  deaths = 0;
                 }
                 myData.addRows([
-                    [{v: new Date(year,month,day)},cases]
+                    [{v: new Date(year,month,day)},deaths]
                 ]);
-                prevCases = row_dataAZ[i][1];
-                // prevDeaths = row_dataAZ[i][2];                
+                prevDeaths = row_dataIL[i][2];
+                // prevDeaths = row_dataIL[i][2];                
             }
             console.log(myData);
             materialChart.draw(myData, google.charts.Bar.convertOptions(materialOptions));

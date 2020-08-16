@@ -1,5 +1,11 @@
 #! /home/dmmacs/anaconda3/bin/python3
-
+#####################################
+# Data Source: https://rapidapi.com/
+#  
+# 
+# 
+# 
+#####################################
 
 from requests import request
 from requests.exceptions import RequestException
@@ -150,10 +156,11 @@ def getRapidApiData():
 
 def getCovidTrackData(area):
 
-    print("Running Rapid Data")
+    print("Running CovidTracking Data")
     retJsonData = None
     if area == "us":
         url = "https://covidtracking.com/api/v1/" + area + "/current.json"
+        url = "https://api.covidtracking.com/v1/" + area + "/current.json"
         response = request("GET", url, headers="", params="")
 
         if response.status_code == 200:
@@ -169,6 +176,7 @@ def getCovidTrackData(area):
 
     else:
         url = "https://covidtracking.com/api/v1/states/" + area + "/current.json"
+        url = "https://api.covidtracking.com/v1/states/" + area + "/current.json"
         response = request("GET", url, headers="", params="")
 
         if response.status_code == 200:
@@ -249,6 +257,14 @@ if __name__ == "__main__":
         json.dump(AZjsonData, fout, indent=4)
     outStr = createOutData(outStr, AZjsonData, "row_dataAZ")
 
+    ILjsonData = gethistoryData("il.txt")
+    tmpOutData = getCovidTrackData("il")
+    ILjsonData = AddNewData(tmpOutData, ILjsonData)
+    fname = "il.txt"
+    with open(fname, "w", encoding="UTF-8") as fout:
+        json.dump(ILjsonData, fout, indent=4)
+    outStr = createOutData(outStr, ILjsonData, "row_dataIL")
+
     AZ_TZ = pytz.timezone("US/Arizona")
     fname = "data1.js"
     with open(fname, "w", encoding="UTF-8") as out:
@@ -256,3 +272,5 @@ if __name__ == "__main__":
         out.write(outStr)
         now = datetime.now()
         out.write("updateTime=" + "\"" + now.astimezone(tz=AZ_TZ).strftime('%d-%b-%Y %I:%M:%S %p %Z') + "\"\n")
+
+    
