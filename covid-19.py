@@ -156,7 +156,7 @@ def getRapidApiData():
 
 def getCovidTrackData(area):
 
-    print("Running CovidTracking Data")
+    print("Running CovidTracking Data for " + area)
     retJsonData = None
     if area == "us":
         url = "https://covidtracking.com/api/v1/" + area + "/current.json"
@@ -199,12 +199,12 @@ def gethistoryData(fname):
 
     return(jsonData)
 
-def createOutData(OutStr, jsonData, varName):
+def createOutData(jsonData, varName):
     # now = datetime.now()
 
     # dateStr = f"{now:%Y-%m-%d}"
-
-    OutStr += varName + " = [\n"
+    
+    OutStr = varName + " = [\n"
     for entry in jsonData:
         #print(entry)
         key = list(entry.keys())[0]
@@ -219,9 +219,9 @@ def createOutData(OutStr, jsonData, varName):
     return (OutStr)
 
 def AddNewData(new, history):
-
-    now = datetime.now()
-    dateStr = f"{now:%Y-%m-%d}"
+    
+    # now = datetime.now()
+    # dateStr = f"{now:%Y-%m-%d}"
 
     newDate = list(new.keys())[0]
     oldDate = list(history[-1].keys())[0]
@@ -233,7 +233,23 @@ def AddNewData(new, history):
 
     return (history)
 
+
+def udpateStateData(area):
+
+    jsonData = gethistoryData(area.lower() + ".txt")
+    tmpOutData = getCovidTrackData(area.lower())
+    jsonData = AddNewData(tmpOutData, jsonData)
+    fname = area.lower() + ".txt"
+    with open(fname, "w", encoding="UTF-8") as fout:
+        json.dump(jsonData, fout, indent=4)
+    outStr = createOutData(jsonData, "row_data" + area)
+
+    return outStr
+
 if __name__ == "__main__":
+
+    start = time.time()
+
     #getCDCData()
 
     #getRapidApiData()
@@ -246,25 +262,14 @@ if __name__ == "__main__":
     with open(fname, "w", encoding="UTF-8") as fout:
         json.dump(USjsonData, fout, indent=4)
     outStr = ""
-    outStr = createOutData(outStr, USjsonData, "row_data1")
-    
-    # Get AZ Data
-    AZjsonData = gethistoryData("az.txt")
-    tmpOutData = getCovidTrackData("az")
-    AZjsonData = AddNewData(tmpOutData, AZjsonData)
-    fname = "az.txt"
-    with open(fname, "w", encoding="UTF-8") as fout:
-        json.dump(AZjsonData, fout, indent=4)
-    outStr = createOutData(outStr, AZjsonData, "row_dataAZ")
+    outStr += createOutData(USjsonData, "row_data1")
 
-    ILjsonData = gethistoryData("il.txt")
-    tmpOutData = getCovidTrackData("il")
-    ILjsonData = AddNewData(tmpOutData, ILjsonData)
-    fname = "il.txt"
-    with open(fname, "w", encoding="UTF-8") as fout:
-        json.dump(ILjsonData, fout, indent=4)
-    outStr = createOutData(outStr, ILjsonData, "row_dataIL")
+    stateData = ["AZ","IL", "MI", "FL", "AL", "CA", "NY", "NJ"]    
 
+    for area in stateData:
+        outStr += udpateStateData(area)
+
+    ###### Output updateTime at end of tile
     AZ_TZ = pytz.timezone("US/Arizona")
     fname = "data1.js"
     with open(fname, "w", encoding="UTF-8") as out:
@@ -272,5 +277,10 @@ if __name__ == "__main__":
         out.write(outStr)
         now = datetime.now()
         out.write("updateTime=" + "\"" + now.astimezone(tz=AZ_TZ).strftime('%d-%b-%Y %I:%M:%S %p %Z') + "\"\n")
+
+
+    end = time.time()
+    print('Completed in {}'.format(end - start))
+
 
     

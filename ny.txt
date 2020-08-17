@@ -295,1112 +295,1163 @@
     },
     {
         "2020-03-04": {
-            "cases": 2,
-            "deaths": 0,
-            "recovered": 0
-        }
-    },
-    {
-        "2020-03-05": {
-            "cases": 2,
-            "deaths": 0,
-            "recovered": 0
-        }
-    },
-    {
-        "2020-03-06": {
-            "cases": 3,
-            "deaths": 0,
-            "recovered": 0
-        }
-    },
-    {
-        "2020-03-07": {
-            "cases": 5,
-            "deaths": 0,
-            "recovered": 0
-        }
-    },
-    {
-        "2020-03-08": {
-            "cases": 5,
-            "deaths": 0,
-            "recovered": 0
-        }
-    },
-    {
-        "2020-03-09": {
-            "cases": 5,
-            "deaths": 0,
-            "recovered": 0
-        }
-    },
-    {
-        "2020-03-10": {
             "cases": 6,
             "deaths": 0,
             "recovered": 0
         }
     },
     {
+        "2020-03-05": {
+            "cases": 22,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-06": {
+            "cases": 33,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-07": {
+            "cases": 76,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-08": {
+            "cases": 105,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-09": {
+            "cases": 142,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-10": {
+            "cases": 173,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
         "2020-03-11": {
-            "cases": 9,
+            "cases": 216,
             "deaths": 0,
             "recovered": 0
         }
     },
     {
         "2020-03-12": {
-            "cases": 9,
+            "cases": 216,
             "deaths": 0,
             "recovered": 0
         }
     },
     {
         "2020-03-13": {
-            "cases": 9,
+            "cases": 421,
             "deaths": 0,
             "recovered": 0
         }
     },
     {
         "2020-03-14": {
-            "cases": 12,
+            "cases": 524,
             "deaths": 0,
             "recovered": 0
         }
     },
     {
         "2020-03-15": {
-            "cases": 12,
-            "deaths": 0,
+            "cases": 729,
+            "deaths": 3,
             "recovered": 0
         }
     },
     {
         "2020-03-16": {
-            "cases": 18,
-            "deaths": 0,
+            "cases": 950,
+            "deaths": 7,
             "recovered": 0
         }
     },
     {
         "2020-03-17": {
-            "cases": 20,
-            "deaths": 0,
+            "cases": 1700,
+            "deaths": 7,
             "recovered": 0
         }
     },
     {
         "2020-03-18": {
-            "cases": 28,
-            "deaths": 0,
+            "cases": 2382,
+            "deaths": 12,
             "recovered": 0
         }
     },
     {
         "2020-03-19": {
-            "cases": 44,
-            "deaths": 0,
+            "cases": 4152,
+            "deaths": 12,
             "recovered": 0
         }
     },
     {
         "2020-03-20": {
-            "cases": 65,
-            "deaths": 0,
+            "cases": 7102,
+            "deaths": 35,
             "recovered": 0
         }
     },
     {
         "2020-03-21": {
-            "cases": 104,
-            "deaths": 1,
+            "cases": 10356,
+            "deaths": 44,
             "recovered": 0
         }
     },
     {
         "2020-03-22": {
-            "cases": 152,
-            "deaths": 2,
+            "cases": 15168,
+            "deaths": 114,
             "recovered": 0
         }
     },
     {
         "2020-03-23": {
-            "cases": 265,
-            "deaths": 2,
+            "cases": 20875,
+            "deaths": 114,
             "recovered": 0
         }
     },
     {
         "2020-03-24": {
-            "cases": 357,
-            "deaths": 5,
+            "cases": 25665,
+            "deaths": 210,
             "recovered": 0
         }
     },
     {
         "2020-03-25": {
-            "cases": 450,
-            "deaths": 6,
+            "cases": 30811,
+            "deaths": 285,
             "recovered": 0
         }
     },
     {
         "2020-03-26": {
-            "cases": 577,
-            "deaths": 8,
+            "cases": 37258,
+            "deaths": 385,
             "recovered": 0
         }
     },
     {
         "2020-03-27": {
-            "cases": 736,
-            "deaths": 13,
+            "cases": 44635,
+            "deaths": 519,
             "recovered": 0
         }
     },
     {
         "2020-03-28": {
-            "cases": 873,
-            "deaths": 15,
+            "cases": 52318,
+            "deaths": 728,
             "recovered": 0
         }
     },
     {
         "2020-03-29": {
-            "cases": 919,
-            "deaths": 17,
+            "cases": 59513,
+            "deaths": 965,
             "recovered": 0
         }
     },
     {
         "2020-03-30": {
-            "cases": 1157,
-            "deaths": 20,
+            "cases": 66497,
+            "deaths": 1218,
             "recovered": 0
         }
     },
     {
         "2020-03-31": {
-            "cases": 1289,
-            "deaths": 24,
+            "cases": 75795,
+            "deaths": 1550,
             "recovered": 0
         }
     },
     {
         "2020-04-01": {
-            "cases": 1413,
-            "deaths": 29,
+            "cases": 83712,
+            "deaths": 1941,
             "recovered": 0
         }
     },
     {
         "2020-04-02": {
-            "cases": 1598,
-            "deaths": 32,
+            "cases": 92381,
+            "deaths": 2373,
             "recovered": 0
         }
     },
     {
         "2020-04-03": {
-            "cases": 1769,
-            "deaths": 41,
+            "cases": 102863,
+            "deaths": 2935,
             "recovered": 0
         }
     },
     {
         "2020-04-04": {
-            "cases": 2019,
-            "deaths": 52,
+            "cases": 113704,
+            "deaths": 3565,
             "recovered": 0
         }
     },
     {
         "2020-04-05": {
-            "cases": 2269,
-            "deaths": 64,
+            "cases": 122031,
+            "deaths": 4159,
             "recovered": 0
         }
     },
     {
         "2020-04-06": {
-            "cases": 2456,
-            "deaths": 65,
+            "cases": 130689,
+            "deaths": 4758,
             "recovered": 0
         }
     },
     {
         "2020-04-07": {
-            "cases": 2575,
-            "deaths": 73,
+            "cases": 138863,
+            "deaths": 5489,
             "recovered": 0
         }
     },
     {
         "2020-04-08": {
-            "cases": 2726,
-            "deaths": 80,
+            "cases": 149316,
+            "deaths": 6268,
             "recovered": 0
         }
     },
     {
         "2020-04-09": {
-            "cases": 3018,
-            "deaths": 89,
+            "cases": 159937,
+            "deaths": 7067,
             "recovered": 0
         }
     },
     {
         "2020-04-10": {
-            "cases": 3112,
-            "deaths": 97,
+            "cases": 170512,
+            "deaths": 7844,
             "recovered": 0
         }
     },
     {
         "2020-04-11": {
-            "cases": 3393,
-            "deaths": 108,
+            "cases": 180458,
+            "deaths": 8627,
             "recovered": 0
         }
     },
     {
         "2020-04-12": {
-            "cases": 3539,
-            "deaths": 115,
+            "cases": 188694,
+            "deaths": 9385,
             "recovered": 0
         }
     },
     {
         "2020-04-13": {
-            "cases": 3702,
-            "deaths": 122,
+            "cases": 195031,
+            "deaths": 10056,
             "recovered": 0
         }
     },
     {
         "2020-04-14": {
-            "cases": 3806,
-            "deaths": 131,
+            "cases": 202208,
+            "deaths": 10834,
             "recovered": 0
         }
     },
     {
         "2020-04-15": {
-            "cases": 3962,
-            "deaths": 142,
+            "cases": 213779,
+            "deaths": 11586,
             "recovered": 0
         }
     },
     {
         "2020-04-16": {
-            "cases": 4234,
-            "deaths": 150,
+            "cases": 222284,
+            "deaths": 12192,
             "recovered": 0
         }
     },
     {
         "2020-04-17": {
-            "cases": 4507,
-            "deaths": 169,
+            "cases": 229642,
+            "deaths": 12822,
             "recovered": 0
         }
     },
     {
         "2020-04-18": {
-            "cases": 4719,
-            "deaths": 177,
+            "cases": 236732,
+            "deaths": 13362,
             "recovered": 0
         }
     },
     {
         "2020-04-19": {
-            "cases": 4929,
-            "deaths": 184,
+            "cases": 242786,
+            "deaths": 13869,
             "recovered": 0
         }
     },
     {
         "2020-04-20": {
-            "cases": 5064,
-            "deaths": 187,
+            "cases": 247512,
+            "deaths": 14347,
             "recovered": 0
         }
     },
     {
         "2020-04-21": {
-            "cases": 5251,
-            "deaths": 208,
+            "cases": 251690,
+            "deaths": 14828,
             "recovered": 0
         }
     },
     {
         "2020-04-22": {
-            "cases": 5459,
-            "deaths": 229,
+            "cases": 257216,
+            "deaths": 15302,
             "recovered": 0
         }
     },
     {
         "2020-04-23": {
-            "cases": 5769,
-            "deaths": 249,
+            "cases": 263460,
+            "deaths": 15740,
             "recovered": 0
         }
     },
     {
         "2020-04-24": {
-            "cases": 6045,
-            "deaths": 266,
+            "cases": 271590,
+            "deaths": 16162,
             "recovered": 0
         }
     },
     {
         "2020-04-25": {
-            "cases": 6280,
-            "deaths": 266,
+            "cases": 282143,
+            "deaths": 16599,
             "recovered": 0
         }
     },
     {
         "2020-04-26": {
-            "cases": 6526,
-            "deaths": 275,
+            "cases": 288045,
+            "deaths": 16966,
             "recovered": 0
         }
     },
     {
         "2020-04-27": {
-            "cases": 6716,
-            "deaths": 275,
+            "cases": 291996,
+            "deaths": 17303,
             "recovered": 0
         }
     },
     {
         "2020-04-28": {
-            "cases": 6948,
-            "deaths": 293,
+            "cases": 295106,
+            "deaths": 17638,
             "recovered": 0
         }
     },
     {
         "2020-04-29": {
-            "cases": 7202,
-            "deaths": 304,
+            "cases": 299691,
+            "deaths": 18015,
             "recovered": 0
         }
     },
     {
         "2020-04-30": {
-            "cases": 7648,
-            "deaths": 320,
+            "cases": 304372,
+            "deaths": 18321,
             "recovered": 0
         }
     },
     {
         "2020-05-01": {
-            "cases": 7962,
-            "deaths": 330,
+            "cases": 308314,
+            "deaths": 18610,
             "recovered": 0
         }
     },
     {
         "2020-05-02": {
-            "cases": 8364,
-            "deaths": 348,
+            "cases": 312977,
+            "deaths": 18909,
             "recovered": 0
         }
     },
     {
         "2020-05-03": {
-            "cases": 8640,
-            "deaths": 362,
+            "cases": 316415,
+            "deaths": 19189,
             "recovered": 0
         }
     },
     {
         "2020-05-04": {
-            "cases": 8919,
-            "deaths": 362,
+            "cases": 318953,
+            "deaths": 19415,
             "recovered": 0
         }
     },
     {
         "2020-05-05": {
-            "cases": 9305,
-            "deaths": 395,
+            "cases": 321192,
+            "deaths": 19645,
             "recovered": 0
         }
     },
     {
         "2020-05-06": {
-            "cases": 9707,
-            "deaths": 426,
+            "cases": 323978,
+            "deaths": 19877,
             "recovered": 0
         }
     },
     {
         "2020-05-07": {
-            "cases": 9945,
-            "deaths": 450,
+            "cases": 327649,
+            "deaths": 20828,
             "recovered": 0
         }
     },
     {
         "2020-05-08": {
-            "cases": 10526,
-            "deaths": 517,
+            "cases": 330407,
+            "deaths": 21045,
             "recovered": 0
         }
     },
     {
         "2020-05-09": {
-            "cases": 10960,
-            "deaths": 532,
+            "cases": 333122,
+            "deaths": 21271,
             "recovered": 0
         }
     },
     {
         "2020-05-10": {
-            "cases": 11119,
-            "deaths": 536,
+            "cases": 335395,
+            "deaths": 21478,
             "recovered": 0
         }
     },
     {
         "2020-05-11": {
-            "cases": 11380,
-            "deaths": 542,
+            "cases": 337055,
+            "deaths": 21640,
             "recovered": 0
         }
     },
     {
         "2020-05-12": {
-            "cases": 11736,
-            "deaths": 562,
+            "cases": 338485,
+            "deaths": 21845,
             "recovered": 0
         }
     },
     {
         "2020-05-13": {
-            "cases": 12176,
-            "deaths": 594,
+            "cases": 340661,
+            "deaths": 22013,
             "recovered": 0
         }
     },
     {
         "2020-05-14": {
-            "cases": 12674,
-            "deaths": 624,
+            "cases": 343051,
+            "deaths": 22170,
             "recovered": 0
         }
     },
     {
         "2020-05-15": {
-            "cases": 13169,
-            "deaths": 651,
+            "cases": 345813,
+            "deaths": 22304,
             "recovered": 0
         }
     },
     {
         "2020-05-16": {
-            "cases": 13631,
-            "deaths": 679,
+            "cases": 348232,
+            "deaths": 22478,
             "recovered": 0
         }
     },
     {
         "2020-05-17": {
-            "cases": 13937,
-            "deaths": 680,
+            "cases": 350121,
+            "deaths": 22619,
             "recovered": 0
         }
     },
     {
         "2020-05-18": {
-            "cases": 14170,
-            "deaths": 686,
+            "cases": 351371,
+            "deaths": 22729,
             "recovered": 0
         }
     },
     {
         "2020-05-19": {
-            "cases": 14566,
-            "deaths": 704,
+            "cases": 352845,
+            "deaths": 22843,
             "recovered": 0
         }
     },
     {
         "2020-05-20": {
-            "cases": 14897,
-            "deaths": 747,
+            "cases": 354370,
+            "deaths": 22976,
             "recovered": 0
         }
     },
     {
         "2020-05-21": {
-            "cases": 15315,
-            "deaths": 763,
+            "cases": 356458,
+            "deaths": 23083,
             "recovered": 0
         }
     },
     {
         "2020-05-22": {
-            "cases": 15608,
-            "deaths": 775,
+            "cases": 358154,
+            "deaths": 23195,
             "recovered": 0
         }
     },
     {
         "2020-05-23": {
-            "cases": 16039,
-            "deaths": 799,
+            "cases": 359926,
+            "deaths": 23282,
             "recovered": 0
         }
     },
     {
         "2020-05-24": {
-            "cases": 16339,
-            "deaths": 800,
+            "cases": 361515,
+            "deaths": 23391,
             "recovered": 0
         }
     },
     {
         "2020-05-25": {
-            "cases": 16561,
-            "deaths": 806,
+            "cases": 362764,
+            "deaths": 23488,
             "recovered": 0
         }
     },
     {
         "2020-05-26": {
-            "cases": 16783,
-            "deaths": 807,
+            "cases": 363836,
+            "deaths": 23564,
             "recovered": 0
         }
     },
     {
         "2020-05-27": {
-            "cases": 17262,
-            "deaths": 831,
+            "cases": 364965,
+            "deaths": 23643,
             "recovered": 0
         }
     },
     {
         "2020-05-28": {
-            "cases": 17763,
-            "deaths": 857,
+            "cases": 366733,
+            "deaths": 23722,
             "recovered": 0
         }
     },
     {
         "2020-05-29": {
-            "cases": 18465,
-            "deaths": 885,
+            "cases": 368284,
+            "deaths": 23780,
             "recovered": 0
         }
     },
     {
         "2020-05-30": {
-            "cases": 19255,
-            "deaths": 903,
+            "cases": 369660,
+            "deaths": 23848,
             "recovered": 0
         }
     },
     {
         "2020-05-31": {
-            "cases": 19936,
-            "deaths": 906,
+            "cases": 370770,
+            "deaths": 23905,
             "recovered": 0
         }
     },
     {
         "2020-06-01": {
-            "cases": 20123,
-            "deaths": 917,
+            "cases": 371711,
+            "deaths": 23959,
             "recovered": 0
         }
     },
     {
         "2020-06-02": {
-            "cases": 21250,
-            "deaths": 941,
+            "cases": 373040,
+            "deaths": 24023,
             "recovered": 0
         }
     },
     {
         "2020-06-03": {
-            "cases": 22233,
-            "deaths": 981,
+            "cases": 374085,
+            "deaths": 24079,
             "recovered": 0
         }
     },
     {
         "2020-06-04": {
-            "cases": 22753,
-            "deaths": 996,
+            "cases": 375133,
+            "deaths": 24133,
             "recovered": 0
         }
     },
     {
         "2020-06-05": {
-            "cases": 24332,
-            "deaths": 1012,
+            "cases": 376208,
+            "deaths": 24175,
             "recovered": 0
         }
     },
     {
         "2020-06-06": {
-            "cases": 25451,
-            "deaths": 1042,
+            "cases": 377316,
+            "deaths": 24212,
             "recovered": 0
         }
     },
     {
         "2020-06-07": {
-            "cases": 26889,
-            "deaths": 1044,
+            "cases": 378097,
+            "deaths": 24259,
             "recovered": 0
         }
     },
     {
         "2020-06-08": {
-            "cases": 27678,
-            "deaths": 1047,
+            "cases": 378799,
+            "deaths": 24299,
             "recovered": 0
         }
     },
     {
         "2020-06-09": {
-            "cases": 28296,
-            "deaths": 1070,
+            "cases": 379482,
+            "deaths": 24348,
             "recovered": 0
         }
     },
     {
         "2020-06-10": {
-            "cases": 29852,
-            "deaths": 1095,
+            "cases": 380156,
+            "deaths": 24404,
             "recovered": 0
         }
     },
     {
         "2020-06-11": {
-            "cases": 31264,
-            "deaths": 1127,
+            "cases": 380892,
+            "deaths": 24442,
             "recovered": 0
         }
     },
     {
         "2020-06-12": {
-            "cases": 32918,
-            "deaths": 1144,
+            "cases": 381714,
+            "deaths": 24495,
             "recovered": 0
         }
     },
     {
         "2020-06-13": {
-            "cases": 34458,
-            "deaths": 1183,
+            "cases": 382630,
+            "deaths": 24527,
             "recovered": 0
         }
     },
     {
         "2020-06-14": {
-            "cases": 35691,
-            "deaths": 1186,
+            "cases": 383324,
+            "deaths": 24551,
             "recovered": 0
         }
     },
     {
         "2020-06-15": {
-            "cases": 36705,
-            "deaths": 1194,
+            "cases": 383944,
+            "deaths": 24579,
             "recovered": 0
         }
     },
     {
         "2020-06-16": {
-            "cases": 39097,
-            "deaths": 1219,
+            "cases": 384575,
+            "deaths": 24608,
             "recovered": 0
         }
     },
     {
         "2020-06-17": {
-            "cases": 40924,
-            "deaths": 1239,
+            "cases": 385142,
+            "deaths": 24629,
             "recovered": 0
         }
     },
     {
         "2020-06-18": {
-            "cases": 43443,
-            "deaths": 1271,
+            "cases": 385760,
+            "deaths": 24661,
             "recovered": 0
         }
     },
     {
         "2020-06-19": {
-            "cases": 46689,
-            "deaths": 1312,
+            "cases": 386556,
+            "deaths": 24686,
             "recovered": 0
         }
     },
     {
         "2020-06-20": {
-            "cases": 49798,
-            "deaths": 1338,
+            "cases": 387272,
+            "deaths": 24710,
             "recovered": 0
         }
     },
     {
         "2020-06-21": {
-            "cases": 52390,
-            "deaths": 1339,
+            "cases": 387936,
+            "deaths": 24725,
             "recovered": 0
         }
     },
     {
         "2020-06-22": {
-            "cases": 54586,
-            "deaths": 1342,
+            "cases": 388488,
+            "deaths": 24739,
             "recovered": 0
         }
     },
     {
         "2020-06-23": {
-            "cases": 58179,
-            "deaths": 1384,
+            "cases": 389085,
+            "deaths": 24766,
             "recovered": 0
         }
     },
     {
         "2020-06-24": {
-            "cases": 59974,
-            "deaths": 1463,
+            "cases": 389666,
+            "deaths": 24782,
             "recovered": 0
         }
     },
     {
         "2020-06-25": {
-            "cases": 63030,
-            "deaths": 1490,
+            "cases": 390415,
+            "deaths": 24800,
             "recovered": 0
         }
     },
     {
         "2020-06-26": {
-            "cases": 66548,
-            "deaths": 1535
+            "cases": 391220,
+            "deaths": 24814,
+            "recovered": 0
         }
     },
     {
         "2020-06-27": {
-            "cases": 70051,
-            "deaths": 1579
+            "cases": 391923,
+            "deaths": 24830,
+            "recovered": 0
         }
     },
     {
         "2020-06-28": {
-            "cases": 73908,
-            "deaths": 1588
+            "cases": 392539,
+            "deaths": 24835,
+            "recovered": 0
         }
     },
     {
         "2020-06-29": {
-            "cases": 74533,
-            "deaths": 1588
+            "cases": 392930,
+            "deaths": 24842,
+            "recovered": 0
         }
     },
     {
         "2020-06-30": {
-            "cases": 79215,
-            "deaths": 1632
+            "cases": 393454,
+            "deaths": 24855,
+            "recovered": 0
         }
     },
     {
         "2020-07-01": {
-            "cases": 84092,
-            "deaths": 1720
+            "cases": 394079,
+            "deaths": 24866,
+            "recovered": 0
         }
     },
     {
         "2020-07-02": {
-            "cases": 87425,
-            "deaths": 1757
+            "cases": 394954,
+            "deaths": 24877,
+            "recovered": 0
         }
     },
     {
         "2020-07-03": {
-            "cases": 91858,
-            "deaths": 1788
+            "cases": 395872,
+            "deaths": 24885,
+            "recovered": 0
         }
     },
     {
         "2020-07-04": {
-            "cases": 94553,
-            "deaths": 1805
+            "cases": 396598,
+            "deaths": 24896,
+            "recovered": 0
         }
     },
     {
         "2020-07-05": {
-            "cases": 98089,
-            "deaths": 1809
+            "cases": 397131,
+            "deaths": 24904,
+            "recovered": 0
         }
     },
     {
         "2020-07-06": {
-            "cases": 101441,
-            "deaths": 1810
+            "cases": 397649,
+            "deaths": 24913,
+            "recovered": 0
         }
     },
     {
         "2020-07-07": {
-            "cases": 105094,
-            "deaths": 1927
+            "cases": 398237,
+            "deaths": 24924,
+            "recovered": 0
         }
     },
     {
         "2020-07-08": {
-            "cases": 108614,
-            "deaths": 1963
+            "cases": 398929,
+            "deaths": 24944,
+            "recovered": 0
         }
     },
     {
         "2020-07-09": {
-            "cases": 112671,
-            "deaths": 2038
+            "cases": 399513,
+            "deaths": 24959,
+            "recovered": 0
         }
     },
     {
         "2020-07-10": {
-            "cases": 116892,
-            "deaths": 2082
+            "cases": 400299,
+            "deaths": 24968,
+            "recovered": 0
         }
     },
     {
         "2020-07-11": {
-            "cases": 119930,
-            "deaths": 2151
+            "cases": 401029,
+            "deaths": 24974,
+            "recovered": 0
         }
     },
     {
         "2020-07-12": {
-            "cases": 122467,
-            "deaths": 2237
+            "cases": 401706,
+            "deaths": 24979,
+            "recovered": 0
         }
     },
     {
         "2020-07-13": {
-            "cases": 123824,
-            "deaths": 2245
+            "cases": 402263,
+            "deaths": 24989,
+            "recovered": 0
         }
     },
     {
         "2020-07-14": {
-            "cases": 128097,
-            "deaths": 2337
+            "cases": 403175,
+            "deaths": 24994,
+            "recovered": 0
         }
     },
     {
         "2020-07-15": {
-            "cases": 131354,
-            "deaths": 2434
+            "cases": 404006,
+            "deaths": 25003,
+            "recovered": 0
         }
     },
     {
         "2020-07-16": {
-            "cases": 134613,
-            "deaths": 2492
+            "cases": 404775,
+            "deaths": 25014,
+            "recovered": 0
         }
     },
     {
         "2020-07-17": {
-            "cases": 138523,
-            "deaths": 2583
+            "cases": 405551,
+            "deaths": 25024,
+            "recovered": 0
         }
     },
     {
         "2020-07-18": {
-            "cases": 141265,
-            "deaths": 2730
+            "cases": 406305,
+            "deaths": 25035,
+            "recovered": 0
         }
     },
     {
         "2020-07-19": {
-            "cases": 143624,
-            "deaths": 2761
+            "cases": 406807,
+            "deaths": 25048,
+            "recovered": 0
         }
     },
     {
         "2020-07-20": {
-            "cases": 145183,
-            "deaths": 2784
+            "cases": 407326,
+            "deaths": 25056,
+            "recovered": 0
         }
     },
     {
         "2020-07-21": {
-            "cases": 148683,
-            "deaths": 2918
+            "cases": 408181,
+            "deaths": 25058,
+            "recovered": 0
         }
     },
     {
         "2020-07-22": {
-            "cases": 150609,
-            "deaths": 2974
+            "cases": 408886,
+            "deaths": 25068,
+            "recovered": 0
         }
     },
     {
         "2020-07-23": {
-            "cases": 152944,
-            "deaths": 3063
+            "cases": 409697,
+            "deaths": 25081,
+            "recovered": 0
         }
     },
     {
         "2020-07-24": {
-            "cases": 156301,
-            "deaths": 3142
+            "cases": 410450,
+            "deaths": 25090,
+            "recovered": 0
         }
     },
     {
         "2020-07-25": {
-            "cases": 160041,
-            "deaths": 3286
+            "cases": 411200,
+            "deaths": 25103,
+            "recovered": 0
         }
     },
     {
         "2020-07-26": {
-            "cases": 162014,
-            "deaths": 3305
+            "cases": 411736,
+            "deaths": 25106,
+            "recovered": 0
         }
     },
     {
         "2020-07-27": {
-            "cases": 163827,
-            "deaths": 3304
+            "cases": 412344,
+            "deaths": 25117,
+            "recovered": 0
         }
     },
     {
         "2020-07-28": {
-            "cases": 165934,
-            "deaths": 3408
+            "cases": 412878,
+            "deaths": 25126,
+            "recovered": 0
         }
     },
     {
         "2020-07-29": {
-            "cases": 168273,
-            "deaths": 3454
+            "cases": 413593,
+            "deaths": 25132,
+            "recovered": 0
         }
     },
     {
         "2020-07-30": {
-            "cases": 170798,
-            "deaths": 3626
+            "cases": 414370,
+            "deaths": 25145,
+            "recovered": 0
         }
     },
     {
         "2020-07-31": {
-            "cases": 174010,
-            "deaths": 3694
+            "cases": 415014,
+            "deaths": 25150,
+            "recovered": 0
         }
     },
     {
         "2020-08-01": {
-            "cases": 177002,
-            "deaths": 3747
+            "cases": 415767,
+            "deaths": 25164,
+            "recovered": 0
         }
     },
     {
         "2020-08-02": {
-            "cases": 178467,
-            "deaths": 3765
+            "cases": 416298,
+            "deaths": 25170,
+            "recovered": 0
         }
     },
     {
         "2020-08-03": {
-            "cases": 179497,
-            "deaths": 3779
+            "cases": 416843,
+            "deaths": 25172,
+            "recovered": 0
         }
     },
     {
         "2020-08-04": {
-            "cases": 180505,
-            "deaths": 3845
+            "cases": 417589,
+            "deaths": 25175,
+            "recovered": 0
         }
     },
     {
         "2020-08-05": {
-            "cases": 182203,
-            "deaths": 3932
+            "cases": 418225,
+            "deaths": 25179,
+            "recovered": 0
         }
     },
     {
         "2020-08-06": {
-            "cases": 183647,
-            "deaths": 4002
+            "cases": 418928,
+            "deaths": 25185,
+            "recovered": 0
         }
     },
     {
         "2020-08-07": {
-            "cases": 185053,
-            "deaths": 4081
+            "cases": 419642,
+            "deaths": 25190,
+            "recovered": 0
         }
     },
     {
         "2020-08-08": {
-            "cases": 186107,
-            "deaths": 4137
+            "cases": 420345,
+            "deaths": 25195,
+            "recovered": 0
         }
     },
     {
         "2020-08-09": {
-            "cases": 186923,
-            "deaths": 4150
+            "cases": 420860,
+            "deaths": 25202,
+            "recovered": 0
         }
     },
     {
         "2020-08-10": {
-            "cases": 187523,
-            "deaths": 4154
+            "cases": 421336,
+            "deaths": 25204,
+            "recovered": 0
         }
     },
     {
         "2020-08-11": {
-            "cases": 188737,
-            "deaths": 4199
+            "cases": 422003,
+            "deaths": 25211,
+            "recovered": 0
         }
     },
     {
         "2020-08-12": {
-            "cases": 189443,
-            "deaths": 4347
+            "cases": 422703,
+            "deaths": 25218,
+            "recovered": 0
         }
     },
     {
         "2020-08-13": {
-            "cases": 190794,
-            "deaths": 4383
+            "cases": 423440,
+            "deaths": 25228,
+            "recovered": 0
         }
     },
     {
         "2020-08-14": {
-            "cases": 191721,
-            "deaths": 4423
+            "cases": 424167,
+            "deaths": 25232,
+            "recovered": 0
         }
     },
     {
         "2020-08-15": {
-            "cases": 192654,
-            "deaths": 4492
+            "cases": 424901,
+            "deaths": 25244,
+            "recovered": 0
         }
     },
     {
         "2020-08-16": {
-            "cases": 193537,
-            "deaths": 4506
+            "cases": 425508,
+            "deaths": 25250
         }
     }
 ]
