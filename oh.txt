@@ -1,0 +1,1457 @@
+[
+    {
+        "2020-01-22": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-01-23": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-01-24": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-01-25": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-01-26": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-01-27": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-01-28": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-01-29": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-01-30": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-01-31": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-02-01": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-02-02": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-02-03": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-02-04": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-02-05": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-02-06": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-02-07": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-02-08": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-02-09": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-02-10": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-02-11": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-02-12": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-02-13": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-02-14": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-02-15": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-02-16": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-02-17": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-02-18": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-02-19": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-02-20": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-02-21": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-02-22": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-02-23": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-02-24": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-02-25": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-02-26": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-02-27": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-02-28": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-02-29": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-01": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-02": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-03": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-04": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-05": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-06": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-07": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-08": {
+            "cases": 0,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-09": {
+            "cases": 3,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-10": {
+            "cases": 3,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-11": {
+            "cases": 4,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-12": {
+            "cases": 5,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-13": {
+            "cases": 13,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-14": {
+            "cases": 13,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-15": {
+            "cases": 36,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-16": {
+            "cases": 50,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-17": {
+            "cases": 67,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-18": {
+            "cases": 88,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-19": {
+            "cases": 119,
+            "deaths": 0,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-20": {
+            "cases": 169,
+            "deaths": 1,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-21": {
+            "cases": 247,
+            "deaths": 3,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-22": {
+            "cases": 351,
+            "deaths": 3,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-23": {
+            "cases": 442,
+            "deaths": 6,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-24": {
+            "cases": 564,
+            "deaths": 8,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-25": {
+            "cases": 704,
+            "deaths": 10,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-26": {
+            "cases": 867,
+            "deaths": 15,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-27": {
+            "cases": 1137,
+            "deaths": 19,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-28": {
+            "cases": 1406,
+            "deaths": 25,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-29": {
+            "cases": 1653,
+            "deaths": 29,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-30": {
+            "cases": 1933,
+            "deaths": 39,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-03-31": {
+            "cases": 2199,
+            "deaths": 55,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-01": {
+            "cases": 2547,
+            "deaths": 65,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-02": {
+            "cases": 2902,
+            "deaths": 81,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-03": {
+            "cases": 3312,
+            "deaths": 91,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-04": {
+            "cases": 3739,
+            "deaths": 102,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-05": {
+            "cases": 4043,
+            "deaths": 119,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-06": {
+            "cases": 4450,
+            "deaths": 142,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-07": {
+            "cases": 4782,
+            "deaths": 167,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-08": {
+            "cases": 5148,
+            "deaths": 193,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-09": {
+            "cases": 5512,
+            "deaths": 213,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-10": {
+            "cases": 5878,
+            "deaths": 231,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-11": {
+            "cases": 6250,
+            "deaths": 247,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-12": {
+            "cases": 6604,
+            "deaths": 253,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-13": {
+            "cases": 6975,
+            "deaths": 274,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-14": {
+            "cases": 7280,
+            "deaths": 324,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-15": {
+            "cases": 7791,
+            "deaths": 361,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-16": {
+            "cases": 8414,
+            "deaths": 389,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-17": {
+            "cases": 9107,
+            "deaths": 418,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-18": {
+            "cases": 10222,
+            "deaths": 451,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-19": {
+            "cases": 11602,
+            "deaths": 471,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-20": {
+            "cases": 12919,
+            "deaths": 509,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-21": {
+            "cases": 13725,
+            "deaths": 557,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-22": {
+            "cases": 14117,
+            "deaths": 610,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-23": {
+            "cases": 14694,
+            "deaths": 656,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-24": {
+            "cases": 15169,
+            "deaths": 690,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-25": {
+            "cases": 15587,
+            "deaths": 711,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-26": {
+            "cases": 15963,
+            "deaths": 728,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-27": {
+            "cases": 16325,
+            "deaths": 753,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-28": {
+            "cases": 16769,
+            "deaths": 799,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-29": {
+            "cases": 17303,
+            "deaths": 937,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-04-30": {
+            "cases": 18027,
+            "deaths": 975,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-01": {
+            "cases": 18743,
+            "deaths": 1002,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-02": {
+            "cases": 19335,
+            "deaths": 1021,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-03": {
+            "cases": 19914,
+            "deaths": 1038,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-04": {
+            "cases": 20474,
+            "deaths": 1056,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-05": {
+            "cases": 20969,
+            "deaths": 1135,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-06": {
+            "cases": 21576,
+            "deaths": 1225,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-07": {
+            "cases": 22131,
+            "deaths": 1271,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-08": {
+            "cases": 23016,
+            "deaths": 1306,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-09": {
+            "cases": 23697,
+            "deaths": 1331,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-10": {
+            "cases": 24081,
+            "deaths": 1341,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-11": {
+            "cases": 24777,
+            "deaths": 1357,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-12": {
+            "cases": 25250,
+            "deaths": 1436,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-13": {
+            "cases": 25721,
+            "deaths": 1483,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-14": {
+            "cases": 26357,
+            "deaths": 1534,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-15": {
+            "cases": 26954,
+            "deaths": 1581,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-16": {
+            "cases": 27474,
+            "deaths": 1610,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-17": {
+            "cases": 27923,
+            "deaths": 1625,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-18": {
+            "cases": 28454,
+            "deaths": 1657,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-19": {
+            "cases": 28952,
+            "deaths": 1720,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-20": {
+            "cases": 29436,
+            "deaths": 1781,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-21": {
+            "cases": 30167,
+            "deaths": 1836,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-22": {
+            "cases": 30794,
+            "deaths": 1872,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-23": {
+            "cases": 31408,
+            "deaths": 1956,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-24": {
+            "cases": 31911,
+            "deaths": 1969,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-25": {
+            "cases": 32477,
+            "deaths": 1987,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-26": {
+            "cases": 33006,
+            "deaths": 2002,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-27": {
+            "cases": 33439,
+            "deaths": 2044,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-28": {
+            "cases": 33915,
+            "deaths": 2098,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-29": {
+            "cases": 34566,
+            "deaths": 2131,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-30": {
+            "cases": 35034,
+            "deaths": 2149,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-05-31": {
+            "cases": 35513,
+            "deaths": 2155,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-01": {
+            "cases": 35984,
+            "deaths": 2206,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-02": {
+            "cases": 36350,
+            "deaths": 2258,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-03": {
+            "cases": 36792,
+            "deaths": 2299,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-04": {
+            "cases": 37282,
+            "deaths": 2339,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-05": {
+            "cases": 37758,
+            "deaths": 2355,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-06": {
+            "cases": 38111,
+            "deaths": 2370,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-07": {
+            "cases": 38476,
+            "deaths": 2377,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-08": {
+            "cases": 38837,
+            "deaths": 2404,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-09": {
+            "cases": 39162,
+            "deaths": 2421,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-10": {
+            "cases": 39575,
+            "deaths": 2457,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-11": {
+            "cases": 40004,
+            "deaths": 2490,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-12": {
+            "cases": 40424,
+            "deaths": 2508,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-13": {
+            "cases": 40848,
+            "deaths": 2554,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-14": {
+            "cases": 41148,
+            "deaths": 2557,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-15": {
+            "cases": 41576,
+            "deaths": 2573,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-16": {
+            "cases": 42010,
+            "deaths": 2597,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-17": {
+            "cases": 42422,
+            "deaths": 2611,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-18": {
+            "cases": 43122,
+            "deaths": 2633,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-19": {
+            "cases": 43731,
+            "deaths": 2667,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-20": {
+            "cases": 44262,
+            "deaths": 2697,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-21": {
+            "cases": 44808,
+            "deaths": 2700,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-22": {
+            "cases": 45537,
+            "deaths": 2704,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-23": {
+            "cases": 46127,
+            "deaths": 2735,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-24": {
+            "cases": 46759,
+            "deaths": 2755,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-25": {
+            "cases": 47651,
+            "deaths": 2772,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-26": {
+            "cases": 48638,
+            "deaths": 2788,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-27": {
+            "cases": 49455,
+            "deaths": 2804,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-28": {
+            "cases": 50309,
+            "deaths": 2807,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-29": {
+            "cases": 51046,
+            "deaths": 2818,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-06-30": {
+            "cases": 51789,
+            "deaths": 2863,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-01": {
+            "cases": 52865,
+            "deaths": 2876,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-02": {
+            "cases": 54166,
+            "deaths": 2903,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-03": {
+            "cases": 55257,
+            "deaths": 2903,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-04": {
+            "cases": 56183,
+            "deaths": 2907,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-05": {
+            "cases": 57151,
+            "deaths": 2911,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-06": {
+            "cases": 57956,
+            "deaths": 2927,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-07": {
+            "cases": 58904,
+            "deaths": 2970,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-08": {
+            "cases": 60181,
+            "deaths": 2991,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-09": {
+            "cases": 61331,
+            "deaths": 3006,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-10": {
+            "cases": 62856,
+            "deaths": 3032,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-11": {
+            "cases": 64214,
+            "deaths": 3036,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-12": {
+            "cases": 65592,
+            "deaths": 3058,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-13": {
+            "cases": 66853,
+            "deaths": 3064,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-14": {
+            "cases": 67995,
+            "deaths": 3069,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-15": {
+            "cases": 69311,
+            "deaths": 3075,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-16": {
+            "cases": 70601,
+            "deaths": 3103,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-17": {
+            "cases": 72280,
+            "deaths": 3112,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-18": {
+            "cases": 73822,
+            "deaths": 3132,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-19": {
+            "cases": 74932,
+            "deaths": 3174,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-20": {
+            "cases": 76168,
+            "deaths": 3189,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-21": {
+            "cases": 77215,
+            "deaths": 3219,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-22": {
+            "cases": 78742,
+            "deaths": 3235,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-23": {
+            "cases": 80186,
+            "deaths": 3256,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-24": {
+            "cases": 81746,
+            "deaths": 3297,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-25": {
+            "cases": 83184,
+            "deaths": 3297,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-26": {
+            "cases": 84073,
+            "deaths": 3307,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-27": {
+            "cases": 85177,
+            "deaths": 3344,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-28": {
+            "cases": 86497,
+            "deaths": 3382,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-29": {
+            "cases": 87893,
+            "deaths": 3422,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-30": {
+            "cases": 89626,
+            "deaths": 3442,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-07-31": {
+            "cases": 91159,
+            "deaths": 3489,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-08-01": {
+            "cases": 92087,
+            "deaths": 3515,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-08-02": {
+            "cases": 93031,
+            "deaths": 3529,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-08-03": {
+            "cases": 93963,
+            "deaths": 3539,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-08-04": {
+            "cases": 95106,
+            "deaths": 3570,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-08-05": {
+            "cases": 96305,
+            "deaths": 3596,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-08-06": {
+            "cases": 97471,
+            "deaths": 3618,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-08-07": {
+            "cases": 98675,
+            "deaths": 3652,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-08-08": {
+            "cases": 99969,
+            "deaths": 3668,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-08-09": {
+            "cases": 100848,
+            "deaths": 3669,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-08-10": {
+            "cases": 101731,
+            "deaths": 3673,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-08-11": {
+            "cases": 102826,
+            "deaths": 3708,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-08-12": {
+            "cases": 104248,
+            "deaths": 3734,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-08-13": {
+            "cases": 105426,
+            "deaths": 3755,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-08-14": {
+            "cases": 106557,
+            "deaths": 3784,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-08-15": {
+            "cases": 107674,
+            "deaths": 3824,
+            "recovered": 0
+        }
+    },
+    {
+        "2020-08-16": {
+            "cases": 108287,
+            "deaths": 3826
+        }
+    }
+]

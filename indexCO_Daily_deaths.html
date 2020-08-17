@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <meta http-equiv="refresh" content="300">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="data1.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart', 'bar']});
+      google.charts.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+
+        var button = document.getElementById('change-chart');
+        var chartDiv = document.getElementById('chart_div');
+
+        var materialOptions = {
+          width: 900,
+          chart: {
+            title: 'Number of CO Deaths Daily',
+          },
+          series: {
+            0: { axis: 'deaths' }, // Bind series 0 to an axis named 'cases'.
+            // 1: { axis: 'deaths' } // Bind series 1 to an axis named 'deaths'.
+          },
+          axes: {
+            y: {
+              deaths: {label: 'deaths'}, // Left y-axis.
+            //   deaths: {side: 'right', label: 'Deaths'} // Right y-axis.
+            }
+          }
+        };
+
+        function drawMaterialChart() {
+            var materialChart = new google.charts.Bar(chartDiv);
+
+            var myData = new google.visualization.DataTable();
+            myData.addColumn('date', 'Date');
+            myData.addColumn('number', 'deaths');
+            // myData.addColumn('number', 'deaths');
+
+            //console.log(row_data1.length)
+            var splt = row_dataCO[0][0].split("-");
+            var year = parseInt(splt[0]);
+            var month = parseInt(splt[1]) - 1;
+            var day = parseInt(splt[2]);
+            var prevCases = row_dataCO[0][1];
+            var prevDeaths = row_dataCO[0][2];
+            for (i = 1; i < row_dataCO.length; i++) {
+                var splt = row_dataCO[i][0].split("-");
+                var year = parseInt(splt[0]);
+                var month = parseInt(splt[1]) - 1;
+                var day = parseInt(splt[2]);
+                var deaths = row_dataCO[i][2]-prevDeaths;
+                if (deaths < 0)
+                {
+                  deaths = 0;
+                }
+                myData.addRows([
+                    [{v: new Date(year,month,day)},deaths]
+                ]);
+                prevDeaths = row_dataCO[i][2];
+                // prevDeaths = row_dataCO[i][2];                
+            }
+            console.log(myData);
+            materialChart.draw(myData, google.charts.Bar.convertOptions(materialOptions));
+        }
+
+        drawMaterialChart();
+    };
+    </script>
+  </head>
+  <body>
+<!--    <button id="change-chart">Change to Classic</button>-->
+    <br><br>
+    <div id="chart_div" style="width: 800px; height: 500px;"></div>
+  </body>
+</html>
+

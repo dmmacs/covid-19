@@ -21,6 +21,8 @@ import time
 import os
 import shutil
 
+import buildIndex
+
 from contextlib import closing
 
 
@@ -246,10 +248,10 @@ def udpateStateData(area):
 
     return outStr
 
-if __name__ == "__main__":
-
+def getAllCurrentData(stateData):
     start = time.time()
 
+    stateData.remove("US")
     #getCDCData()
 
     #getRapidApiData()
@@ -263,8 +265,6 @@ if __name__ == "__main__":
         json.dump(USjsonData, fout, indent=4)
     outStr = ""
     outStr += createOutData(USjsonData, "row_data1")
-
-    stateData = ["AZ","IL", "MI", "FL", "AL", "CA", "NY", "NJ"]    
 
     for area in stateData:
         outStr += udpateStateData(area)
@@ -280,7 +280,13 @@ if __name__ == "__main__":
 
 
     end = time.time()
-    print('Completed in {}'.format(end - start))
+    txt = 'Completed covid-19 current data collection in {elapsedTime:0.2f} s'
+    print(txt.format(elapsedTime=(end-start)))
+    # print('Completed covid-19 current data collection in {0.2f} s'.format(end - start))
 
 
-    
+if __name__ == "__main__":
+    stateData = ["AZ","IL", "MI", "FL", "AL", "CA", "NY", "NJ","GA"]    
+    stateData = buildIndex.get_state_list()
+
+    getAllCurrentData(stateData)

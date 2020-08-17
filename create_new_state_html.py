@@ -4,14 +4,16 @@ import sys
 import time
 import covidTracking_historic
 import buildIndex
+import covid_19
 
 
 
 if __name__ == "__main__":
     start = time.time()
+    state_areas = []
     for i in range(1, len(sys.argv)):
         print (i, sys.argv[i])
-    
+        state_areas.append(sys.argv[i])
         ### Create HTML Files
         new_area = sys.argv[i]
         print("Building Files for " + new_area)
@@ -60,9 +62,11 @@ if __name__ == "__main__":
         covidTracking_historic.getData(new_area)
 
 
-    buildIndex.build_index()
-    end = time.time()
+    stateData = buildIndex.build_index()
+    covid_19.getAllCurrentData(stateData)
 
-    print('Completed in {}'.format(end - start))
+    end = time.time()
+    txt = 'Completed creating new states, {states}, collection in {elapsedTime:0.2f} s'
+    print(txt.format(states=state_areas, elapsedTime=(end-start)))
 
 
