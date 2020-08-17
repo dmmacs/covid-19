@@ -2,3 +2,5 @@
 untitled*
 *.code-workspace
 *.json
+tmp.txt
+state_meta_data.txt
