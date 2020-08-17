@@ -1,11 +1,11 @@
 #! /home/dmmacs/anaconda3/bin/python3
-#####################################
-# Data Source: https://rapidapi.com/
+#############################################################################
+# Data Source: https://covidtracking.com/
 #  
 # 
 # 
 # 
-#####################################
+#############################################################################
 
 from requests import request
 from requests.exceptions import RequestException
