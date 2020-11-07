@@ -17,6 +17,7 @@ import platform
 import pytz
 import csv
 
+from pathlib import Path
 import time
 import os
 import shutil
@@ -25,6 +26,8 @@ import buildIndex
 
 from contextlib import closing
 
+
+Pop_data = {}
 
 def getRapidApiData():
 
@@ -161,7 +164,6 @@ def getCovidTrackData(area):
     print("Running CovidTracking Data for " + area)
     retJsonData = None
     if area == "us":
-        url = "https://covidtracking.com/api/v1/" + area + "/current.json"
         url = "https://api.covidtracking.com/v1/" + area + "/current.json"
         response = request("GET", url, headers="", params="")
 
@@ -177,7 +179,6 @@ def getCovidTrackData(area):
             retJsonData = {dateStr:{"cases":totalCases,"deaths":totalDeaths}}
 
     else:
-        url = "https://covidtracking.com/api/v1/states/" + area + "/current.json"
         url = "https://api.covidtracking.com/v1/states/" + area + "/current.json"
         response = request("GET", url, headers="", params="")
 
@@ -212,9 +213,15 @@ def createOutData(jsonData, varName):
         key = list(entry.keys())[0]
         OutStr += "\t[\"" + key  + "\"" 
         OutStr += ","
-        OutStr += str(entry.get(key).get("cases"))
+        if entry.get(key).get("cases") is None:
+            OutStr += str(0)
+        else:
+            OutStr += str(entry.get(key).get("cases"))
         OutStr += ","
-        OutStr += str(entry.get(key).get("deaths"))
+        if entry.get(key).get("cases") is None:
+            OutStr += str(0)
+        else:
+            OutStr += str(entry.get(key).get("deaths"))
         OutStr += "],\n" # + "\"," + str(row[1]) + "," + str(row[2]) + "],\n"
 
     OutStr += "];\n"
@@ -248,14 +255,37 @@ def udpateStateData(area):
 
     return outStr
 
+def getCSVHeadings(area):
+    jsonData = gethistoryData(area.lower() + ".txt")
+
+    retVal = "state" + ","
+    for row in jsonData:
+        retVal += list(row.keys())[0] + ","
+    return retVal
+
+def updateCSVFile(area):
+    jsonData = gethistoryData(area.lower() + ".txt")
+
+    for key,value in Pop_data.items():
+        if key == area:
+            population = int(value) / 100000
+            break
+
+    retVal = area.upper() + ","
+    for row in jsonData:
+        retVal += str(list(row.items())[0][1].get('cases')) + ","
+
+    retVal2 = area.upper() + ","
+    for row in jsonData:
+        retVal2 += str(list(row.items())[0][1].get('cases') / population) + ","
+
+    return retVal, retVal2
+
 def getAllCurrentData(stateData):
     start = time.time()
 
     stateData.remove("US")
-    #getCDCData()
-
-    #getRapidApiData()
-    # Get US Data
+    # Get US Data, using CovidTrack
     USjsonData = gethistoryData("jsonData.txt")
     tmpOutData = getCovidTrackData("us")
     USjsonData = AddNewData(tmpOutData, USjsonData)
@@ -278,6 +308,21 @@ def getAllCurrentData(stateData):
         now = datetime.now()
         out.write("updateTime=" + "\"" + now.astimezone(tz=AZ_TZ).strftime('%d-%b-%Y %I:%M:%S %p %Z') + "\"\n")
 
+    outStr = getCSVHeadings("az") + "\n"
+    outStr2 = outStr
+    for area in stateData:
+        val1, val2 = updateCSVFile(area)
+        outStr += val1 + "\n"
+        outStr2 += val2 + "\n"
+        # outStr += updateCSVFile(area) + "\n"
+    
+    with open("data.csv", "w", encoding="UTF-8") as out:
+        out.write(outStr)
+    
+    with open("data1.csv", "w", encoding="UTF-8") as out:
+        out.write(outStr2)
+
+
 
     end = time.time()
     txt = 'Completed covid-19 current data collection in {elapsedTime:0.2f} s'
@@ -286,7 +331,19 @@ def getAllCurrentData(stateData):
 
 
 if __name__ == "__main__":
+    start = time.time()
+
+
+    # Load State Population Data
+    with open("pop.json", "r", encoding="UTF-8") as fin:
+        Pop_data = json.load(fin)
     stateData = ["AZ","IL", "MI", "FL", "AL", "CA", "NY", "NJ","GA"]    
     stateData = buildIndex.get_state_list()
 
     getAllCurrentData(stateData)
+
+    end = time.time()
+
+    print()
+    print(Path(__file__).stem + ' completed in ' + str(timedelta(seconds=end-start)) + ' ({:02.3F} secdonds)'.format(end-start))
+
