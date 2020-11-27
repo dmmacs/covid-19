@@ -209,18 +209,27 @@ def createOutData(jsonData, varName):
 
     # dateStr = f"{now:%Y-%m-%d}"
     
+    test_pos_ave = []
+    prev_tests = 0
+    test_sum = 0
+
     mv_ave_data = []
     prev_cases = 0
     case_sum = 0
+    
     ave_window = 7
-
-    OutStr = varName + " = [\n"
+    
+    OutStr = "//   0 ,  1  ,  2   ,    3     ,   4            ,    5\n"
+    OutStr += "// Cases,Deaths,TotalTests, 7 Day Average cases,+test 7 Day Average\n"
+    OutStr += varName + " = [\n"
     for entry in jsonData:
         #print(entry)
         key = list(entry.keys())[0]
         OutStr += "\t[\"" + key  + "\"" 
         OutStr += ","
         cases = 0
+        tests = 0
+
         if entry.get(key).get("positive") is None:
             OutStr += str(0)
         else:
@@ -228,21 +237,43 @@ def createOutData(jsonData, varName):
             cases = entry.get(key).get("positive")
         OutStr += ","
         if entry.get(key).get("death") is None:
+            OutStr += str(0) + ","
+        else:
+            OutStr += str(entry.get(key).get("death")) + ","
+
+        if entry.get(key).get("totalTestResults") is None:
             OutStr += str(0)
         else:
-            OutStr += str(entry.get(key).get("death"))
-
+            OutStr += str(entry.get(key).get('totalTestResults'))
+            tests = entry.get(key).get('totalTestResults')
         OutStr += ","
-        diff = cases - prev_cases
+ 
+        diff_cases = cases - prev_cases
         prev_cases = cases
-        case_sum += diff
+        case_sum += diff_cases
         if len(mv_ave_data) == ave_window:
             case_sum -= mv_ave_data[0]
             mv_ave_data.pop(0)
-        mv_ave_data.append(diff)
+        mv_ave_data.append(diff_cases)
         average = case_sum / ave_window
-
         OutStr += str(average)
+
+        OutStr += ","
+
+        diff_tests = tests - prev_tests
+        prev_tests = tests
+        if diff_tests <= 0:
+            val = 0
+        else:
+            val = diff_cases / diff_tests * 100
+        test_sum += val
+        if len(test_pos_ave) == ave_window:
+            test_sum -= test_pos_ave[0]
+            test_pos_ave.pop(0)
+        test_pos_ave.append(val)
+        average = test_sum / ave_window
+        OutStr += str(average)
+
 
         OutStr += "],\n" # + "\"," + str(row[1]) + "," + str(row[2]) + "],\n"
 

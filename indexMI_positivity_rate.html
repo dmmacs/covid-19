@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <meta http-equiv="refresh" content="300">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="data1.js"></script>
+    <script type="text/javascript" src="pop.js"></script>
+    <script type="text/javascript">
+     function getPop(area) {
+        for (i = 0; i < Population.length; i++) {
+          if (Population[i][0] == area) {
+              return(Population[i][1])
+          }
+        }
+      }        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawVisualization);
+  
+        
+        function drawVisualization() {
+
+        var myData = new google.visualization.DataTable();
+        myData.addColumn('date', 'Date');
+        myData.addColumn('number', 'Positivity Rate');
+        myData.addColumn('number', 'Positivity Rate 7 day average')
+
+        var splt = row_dataMI[0][0].split("-");
+        var year = parseInt(splt[0]);
+        var month = parseInt(splt[1]) - 1;
+        var day = parseInt(splt[2]);
+        var prevCases = row_dataMI[0][1];
+        var prevTests = row_dataMI[0][3]
+
+        for (i = 1; i < row_dataMI.length; i++) {
+                var splt = row_dataMI[i][0].split("-");
+                var year = parseInt(splt[0]);
+                var month = parseInt(splt[1]) - 1;
+                var day = parseInt(splt[2]);
+                var cases = row_dataMI[i][1];
+                var dailycases = cases - prevCases;
+                if (dailycases < 0)
+                {
+                  dailycases = 0;
+                }
+
+                var totalTests = row_dataMI[i][3]
+                var dailyTests = totalTests - prevTests;
+                if (dailyTests < 0)
+                {
+                  dailyTests = 0;
+                }
+                // dailycases /= pop
+                ave = row_dataMI[i][4];
+                // console.log(dailycases,ave)
+                
+                totalTests = row_dataMI[i][3]
+                ave = dailycases / dailyTests * 100
+                console.log(dailycases, dailyTests, ave, row_dataMI[i][5])
+                myData.addRows([
+                    [{v: new Date(year,month,day)},ave, row_dataMI[i][5]]
+                ]);
+                prevCases = row_dataMI[i][1];
+                prevTests = row_dataMI[i][3];
+                // prevDeaths = row_dataCT[i][2];                
+            }
+
+
+
+  
+          var options = {
+            title : 'MI Test Positivity',
+            vAxes: {0: {title: 'Rate'}},
+            hAxis: {format:'M/dd/y'}, gridlines:{color:'#FFF'},//title: 'Date'},
+            seriesType: 'bars',
+            series: {0: {color:'Gray'},1: {type: 'line', color:'OrangeRed'}}
+          };
+  
+          var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+          chart.draw(myData, options);
+        }
+      </script>
+    </head>
+    <body>
+      <div id="chart_div" style="width: 900px; height: 500px;"></div>
+    </body>
+</html>
+

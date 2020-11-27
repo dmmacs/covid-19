@@ -1,0 +1,156 @@
+<html>
+<head>
+  <meta http-equiv="refresh" content="300">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Covid-19 Data</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style id="compiled-css" type="text/css"></style>
+</head>
+<body>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <br><br>
+  <div id="chart_div"></div>
+   
+
+  <script type="text/javascript" src="data1.js"></script>
+  <script type="text/javascript">
+	
+	var logToggle = 0;
+
+      google.charts.load('current', {'packages':['line', 'corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() { 
+    
+
+      var tton = document.getElementById('change-chart');
+      var chartDiv = document.getElementById('chart_div');
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Date');
+      data.addColumn('number', "# of Case");
+      data.addColumn('number', "# of Deaths");
+    //   data.addColumn('number', "Average Hours of Daylight");
+      
+      // rows4 = [];
+      // for(i = 0; i<row_data.length; i++) {
+      //   rows4.push([new Date(row_data[i][0],row_data[i][1],row_data[i][2]),row_data[i][3]]);
+      // }
+      rows5 = [];
+      //console.log(row_data1.length)
+      for (i = 0; i < row_dataLA.length; i++) {
+        rows5.push([row_dataLA[i][0],row_dataLA[i][1],row_dataLA[i][2]]);
+        //console.log(row_data1[i][0])
+      }
+      for (i = 0; i < rows5.length; i++) {
+        // console.log(rows5[i]);
+      }
+
+      data.addRows(rows5);
+
+      var classicOptions_Linear = {
+        title: 'Cases of Covid-19 - LA - Linear',
+        width: 1000,
+        height: 500,
+        // Gives each series an axis that matches the vAxes number below.
+        series: {
+          0: {targetAxisIndex: 0},
+          1: {targetAxisIndex: 1},
+        },
+        vAxes: {
+          // Adds titles to each axis.
+          0: {title: 'Cases'},//, scaleType: 'log' },
+          1: {title: 'Deaths'},//, scaleType: 'log' },
+        },
+        hAxis: {gridlines: {color:'#FFF',count:'-1'}},
+
+      };
+
+      var classicOptions_Log = {
+        title: 'Cases of Covid-19 - LA - Log',
+        width: 1000,
+        height: 500,
+        // Gives each series an axis that matches the vAxes number below.
+        series: {
+          0: {targetAxisIndex: 0},
+          1: {targetAxisIndex: 1},
+        },
+        vAxes: {
+          // Adds titles to each axis.
+          0: {title: 'Cases', scaleType: 'log' },
+          1: {title: 'Deaths', scaleType: 'log' },
+        },
+        hAxis: {gridlines: {color:'#FFF',count:'-1'}},
+
+      };
+      function drawMaterialChart() {
+        var materialChart = new google.charts.Line(chartDiv);
+        materialChart.draw(data, classicOptions);
+        // button.innerText = 'Change to Classic';
+        // button.onclick = drawClassicChart;
+      }
+	  function setupToggle(){
+		document.getElementById('expenses').addEventListener('click', function () {
+			if (logToggle == 0)
+			{
+				drawClassicChart_Log();
+				logToggle = 1;
+			}
+			else
+			{
+				drawClassicChart_Linear();
+				logToggle = 0;
+			}
+		}, false);
+	  }
+      function drawClassicChart_Linear() {
+        var classicChart = new google.visualization.LineChart(chartDiv);
+        classicChart.draw(data, classicOptions_Linear);
+        // button.innerText = 'Change to Material';
+        // button.onclick = drawMaterialChart;
+
+      }
+      function drawClassicChart_Log() {
+        var classicChart = new google.visualization.LineChart(chartDiv);
+        classicChart.draw(data, classicOptions_Log);
+        // button.innerText = 'Change to Material';
+        // button.onclick = drawMaterialChart;
+
+      }
+
+
+	  setupToggle();
+      drawClassicChart_Linear();
+
+    }
+
+
+  //]]></script>
+
+<!--<script>document.write(rows2)</script>
+<br/>
+<script>document.write(new Date(rows2[0][0],rows2[0][1]))</script>
+<br/>
+<script>document.write(rows2.length)</script>
+-->
+<script>function getDate() {
+  console.log(new Date())
+  document.write(new Date())
+ }
+ </script>
+ <script>function getupdateTime() {
+   console.log(updateTime);
+   document.write(updateTime);
+ }</script>
+<div alight="right">
+<button class="ui-button ui-widget ui-corner-all" id=expenses >Toggle log</button>
+</div>
+<div align="right">
+  <p style="font-size:10px;right:auto"> Last Updated: <script>getupdateTime()</script></p>
+  <p><script>getupdateTime</script></p>
+</div>
+</body>
+</html>

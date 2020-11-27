@@ -3,10 +3,16 @@
     <meta http-equiv="refresh" content="300">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="data1.js"></script>
+    <script type="text/javascript" src="pop.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart', 'bar']});
       google.charts.setOnLoadCallback(drawStuff);
 
+      function getPop(area) {
+        for (i = 0; i < Population.length; i++) {
+          console.log(Population[i][0])
+        }
+      }
       function drawStuff() {
 
         var button = document.getElementById('change-chart');
@@ -19,11 +25,13 @@
           },
           series: {
             0: { axis: 'cases' }, // Bind series 0 to an axis named 'cases'.
+            1: { axis: 'cases' }
             // 1: { axis: 'deaths' } // Bind series 1 to an axis named 'deaths'.
           },
           axes: {
             y: {
               cases: {label: 'cases'}, // Left y-axis.
+              // average:{label: '7-day average'}
             //   deaths: {side: 'right', label: 'Deaths'} // Right y-axis.
             }
           }
@@ -60,7 +68,7 @@
                 prevCases = row_dataAZ[i][1];
                 // prevDeaths = row_dataAZ[i][2];                
             }
-            console.log(myData);
+            // console.log(myData);
             materialChart.draw(myData, google.charts.Bar.convertOptions(materialOptions));
         }
 
