@@ -1,6 +1,7 @@
 
 import glob2 as glob
 
+import sys
 
 def html_hdr():
     outStr = ""
@@ -8,7 +9,7 @@ def html_hdr():
     outStr += "<html>"  + "\n"
     outStr += '\t<head>' + "\n"
     outStr += '\t\t<title>Covid-19 </title>' + "\n"
-    outStr += '\t\t<link rel="shortcut icon" href="https://www.cdc.gov/TemplatePackage/4.0/assets/imgs/favicon.ico">' + "\n"
+    outStr += '\t\t<link rel="shortcut icon" href="../images/favicon.jpg">' + "\n"
     outStr += '\t\t<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>' + "\n"
     outStr += '\t\t<script src="../js/sortable.js"></script>' + "\n"
     outStr += '\t\t<link href="../css/dashboard.css" rel="stylesheet" media="screen" />' + "\n"
@@ -21,6 +22,9 @@ def html_hdr():
     outStr += '\t<div>' + "\n"
     outStr += '\t\t<h1><a href="https://www.cdc.gov/coronavirus/2019-ncov/index.html?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fcoronavirus%2Findex.html">CDC Covid-19<a><br/></h1>' + "\n"
     outStr += "\t</div>" + "\n"
+    outStr += '<p><a href="covid_bar_race_total.html">Data Visualization Total Cases</a></p>\n'
+    outStr += '<p><a href="covid_bar_race_per_pop.html">Data Visualization Cases 100,000 people</a></p>\n'
+    outStr += '<p><a href="covid_bar_race_per_day.html">Data Visualization Cases per Day</a></p>\n'
 
     return outStr
 
@@ -79,8 +83,8 @@ def build_index():
 
     outStr += "\t<table>\n"
 
-    col_hdr = ["Cumulative", "Daily", "Daily Cases", "Daily Deaths"]
-    col_fname = ["", "_Daily", "_Daily_cases","_Daily_deaths"]
+    col_hdr = ["Cumulative", "Daily", "Daily Cases", "Daily Deaths","Daily Cases/100k pop", "Positivity Rate"]
+    col_fname = ["", "_Daily", "_Daily_cases","_Daily_deaths", "_Daily_cases_pop", "_positivity_rate"]
 
     # Add Header Row
     # Blank first
@@ -102,20 +106,6 @@ def build_index():
         outStr += "\t\t</tr>\n"
 
 
-    # # Create Table
-    # for i in range(5): # Rows (5)
-    #     if i == 0:
-    #         outStr += "\t\t<tr>\n"
-    #         outStr += "\t\t\t<th>&nbsp;</th>\n"
-    #         for area in area_list:
-    #             outStr += "\t\t\t<th>" + area + "</th>\n"
-    #         outStr += "\t\t</tr>\n"
-    #     else:
-    #         outStr += "\t\t<tr>\n"
-    #         outStr += "\t\t\t<td>" + row_hdr[i - 1] + "</td>\n"
-    #         for area in area_list:
-    #             outStr += "\t\t\t<td>" + '<a href="index' + area + row_fname[i - 1] + '.html">' + area + " " + row_hdr[i-1] + '</a>' + "</td>\n"
-    #         outStr += "\t\t</tr>\n"
 
     outStr += "\t</table>\n"
 
@@ -128,5 +118,51 @@ def build_index():
 
     return area_list
     
+def create_state_pop(fname, area):
+    print(fname, area)
+    with open(fname, "r", encoding="UTF-8") as fin:
+        template = fin.read()
+
+    findStr = 'pop = getPop("AZ") / 100000'
+    newStr = findStr.replace('"AZ"', '"' + area + '"')
+    template = template.replace(findStr, newStr)
+    template = template.replace("AZ", area, )
+    fname = fname.replace("AZ", area)
+    with open(fname, "w", encoding="UTF-8") as fout:
+        fout.write(template)
+    pass
+
+def create_state_ratio(fname, area):
+    print(fname, area)
+    with open(fname, "r", encoding="UTF-8") as fin:
+        template = fin.read()
+
+    findStr = 'pop = getPop("AZ") / 100000'
+    newStr = findStr.replace('"AZ"', '"' + area + '"')
+    template = template.replace(findStr, newStr)
+    template = template.replace("AZ", area, )
+    fname = fname.replace("1", area)
+    fname = "index" + area + "_positivity_rate" + ".html"
+    with open(fname, "w", encoding="UTF-8") as fout:
+        fout.write(template)
+
+    pass
+
 if __name__ == "__main__":
+
+    create_per_pop = ""
+
+    if len(sys.argv) > 2:
+        if sys.argv[1] == "pop":
+            create_per_pop = sys.argv[2]
+            areas = get_state_list()
+            for state in areas:
+                create_state_pop(create_per_pop, state)
+        elif sys.argv[1] == "ratio":
+            areas = get_state_list()
+            for state in areas:
+                create_state_ratio(sys.argv[2], state)
+
+
+
     build_index()
