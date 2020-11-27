@@ -300,24 +300,38 @@ def updateCSVFile(area):
 
     retVal = area.upper() + ","
     for row in jsonData:
-        retVal += str(list(row.items())[0][1].get('positive')) + ","
+        cases = list(row.items())[0][1].get('positive')
+        if cases == None:
+            cases = 0
+        retVal += str(cases) + ","
 
     retVal2 = area.upper() + "," + region + "," + division + ","
     for row in jsonData:
-        retVal2 += str(list(row.items())[0][1].get('positive') / population) + ","
+        cases = list(row.items())[0][1].get('positive')
+        if cases == None:
+            cases = 0
+        retVal2 += str(cases / population) + ","
 
     retVal3 = area.upper() + ","
     for row in jsonData:
-        retVal3 += str(list(row.items())[0][1].get('deaths')) + ","
+        deaths = list(row.items())[0][1].get('deaths')
+        if deaths is None:
+            deaths = 0
+        retVal3 += str(deaths) + ","
     
     retVal4 = area.upper() + ","
     for row in jsonData:
-        retVal4 += str(list(row.items())[0][1].get('deaths') / population) + ","
+        deaths = list(row.items())[0][1].get('deaths')
+        if deaths is None:
+            deaths = 0
+        retVal4 += str(deaths / population) + ","
 
     retVal5 = area.upper() + ","  + region + "," + division + ","
     cases_yesterday = 0
     for row in jsonData:
         cases = list(row.items())[0][1].get('positive')
+        if cases == None:
+            cases = 0
         retVal5 += str((cases - cases_yesterday) / population) + ","
         cases_yesterday = cases
 
@@ -325,6 +339,8 @@ def updateCSVFile(area):
     cases_yesterday = 0
     for row in jsonData:
         cases = list(row.items())[0][1].get('positive')
+        if cases == None:
+            cases = 0
         retVal6 += str((cases - cases_yesterday)) + ","
         cases_yesterday = cases
 
