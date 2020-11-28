@@ -7,6 +7,8 @@ import os
 import buildIndex
 from pathlib import Path
 
+from tqdm import tqdm
+
 def createEmptyEntry(dateStr, area):
     return {
             "date": dateStr.replace("-",""),
@@ -128,9 +130,9 @@ if __name__ == "__main__":
 
     stateData = buildIndex.get_state_list()
     
-    for area in stateData:
-        getData(area)
-    # getData("az")
+    # for area in stateData:
+    #     getData(area)
+    getData("az")
     
     end = time.time()
 
