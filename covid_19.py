@@ -102,7 +102,7 @@ Pop_data = {}
 
 #     # Create data1.js file
 #     out_data1 = "//Rapid API Data\n"
-#     out_data1 += "row_data1 = [\n"
+#     out_data1 += "row_dataUS = [\n"
 #     for entry in jsonData:
 #         #print(entry)
 #         key = list(entry.keys())[0]
@@ -209,7 +209,8 @@ def createOutData(jsonData, varName):
 
     # dateStr = f"{now:%Y-%m-%d}"
     
-    test_pos_ave = []
+    test_pos_vals = []
+    test_neg_vals = []
     prev_tests = 0
     test_sum = 0
 
@@ -219,61 +220,73 @@ def createOutData(jsonData, varName):
     
     ave_window = 7
     
-    OutStr = "//   0 ,  1  ,  2   ,    3     ,   4            ,    5\n"
-    OutStr += "// Cases,Deaths,TotalTests, 7 Day Average cases,+test 7 Day Average\n"
+    OutStr = "//   0 ,  1  ,  2   ,    3           ,   4            ,    5\n"
+    OutStr += "//date, Cases,Deaths,Positivity Rate,7 Day Average cases,+test 7 Day Average\n"
     OutStr += varName + " = [\n"
     for entry in jsonData:
         #print(entry)
         key = list(entry.keys())[0]
+
+        # Date (index 0)
         OutStr += "\t[\"" + key  + "\"" 
         OutStr += ","
         cases = 0
         tests = 0
 
+        # Cases (index 1), positive tests
         if entry.get(key).get("positive") is None:
             OutStr += str(0)
         else:
             OutStr += str(entry.get(key).get("positive"))
             cases = entry.get(key).get("positive")
         OutStr += ","
+        
+        # Deaths (index 2)
         if entry.get(key).get("death") is None:
             OutStr += str(0) + ","
         else:
             OutStr += str(entry.get(key).get("death")) + ","
 
-        if entry.get(key).get("totalTestResults") is None:
+        # Positvity Rate (index 3)
+        pos_inc = entry.get(key).get('positiveIncrease')
+        neg_inc = entry.get(key).get('negativeIncrease')
+        daily_tests = pos_inc + neg_inc
+        if daily_tests is None:
             OutStr += str(0)
         else:
-            OutStr += str(entry.get(key).get('totalTestResults'))
-            tests = entry.get(key).get('totalTestResults')
+            if daily_tests > 0:
+                OutStr += str(pos_inc / daily_tests * 100)
+            else:
+                OutStr += str(0)
         OutStr += ","
- 
-        diff_cases = cases - prev_cases
-        prev_cases = cases
-        case_sum += diff_cases
+
+        # 7 Day Average Case (index 4)
         if len(mv_ave_data) == ave_window:
-            case_sum -= mv_ave_data[0]
             mv_ave_data.pop(0)
-        mv_ave_data.append(diff_cases)
-        average = case_sum / ave_window
+        mv_ave_data.append(pos_inc)
+        average = sum(mv_ave_data) / len(mv_ave_data)
         OutStr += str(average)
 
         OutStr += ","
 
-        diff_tests = tests - prev_tests
-        prev_tests = tests
-        if diff_tests <= 0:
-            val = 0
-        else:
-            val = diff_cases / diff_tests * 100
-        test_sum += val
-        if len(test_pos_ave) == ave_window:
-            test_sum -= test_pos_ave[0]
-            test_pos_ave.pop(0)
-        test_pos_ave.append(val)
-        average = test_sum / ave_window
-        OutStr += str(average)
+        
+        # 7 day positivity Average (index 5)
+        # test_pos_vals = []
+        # test_neg_vals = []
 
+        if len(test_pos_vals) == ave_window:
+            test_pos_vals.pop(0)
+            test_neg_vals.pop(0)
+        
+        test_pos_vals.append(pos_inc)
+        test_neg_vals.append(neg_inc)
+
+        denom = sum(test_pos_vals) + sum(test_neg_vals)
+        if denom > 0:
+            average = sum(test_pos_vals) / (sum(test_pos_vals) + sum(test_neg_vals)) * 100
+        else:
+            average = 0
+        OutStr += str(average)
 
         OutStr += "],\n" # + "\"," + str(row[1]) + "," + str(row[2]) + "],\n"
 
@@ -390,7 +403,7 @@ def getAllCurrentData(stateData):
     with open(fname, "w", encoding="UTF-8") as fout:
         json.dump(USjsonData, fout, indent=4)
     outStr = ""
-    outStr += createOutData(USjsonData, "row_data1")
+    outStr += createOutData(USjsonData, "row_dataUS")
 
     for area in stateData:
         outStr += udpateStateData(area)

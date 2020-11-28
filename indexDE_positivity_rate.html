@@ -35,35 +35,11 @@
                 var year = parseInt(splt[0]);
                 var month = parseInt(splt[1]) - 1;
                 var day = parseInt(splt[2]);
-                var cases = row_dataDE[i][1];
-                var dailycases = cases - prevCases;
-                if (dailycases < 0)
-                {
-                  dailycases = 0;
-                }
-
-                var totalTests = row_dataDE[i][3]
-                var dailyTests = totalTests - prevTests;
-                if (dailyTests < 0)
-                {
-                  dailyTests = 0;
-                }
-                // dailycases /= pop
-                ave = row_dataDE[i][4];
-                // console.log(dailycases,ave)
-                
-                totalTests = row_dataDE[i][3]
-                ave = dailycases / dailyTests * 100
-                console.log(dailycases, dailyTests, ave, row_dataDE[i][5])
                 myData.addRows([
-                    [{v: new Date(year,month,day)},ave, row_dataDE[i][5]]
+                    [{v: new Date(year,month,day)},row_dataDE[i][3], row_dataDE[i][5]]
                 ]);
-                prevCases = row_dataDE[i][1];
-                prevTests = row_dataDE[i][3];
                 // prevDeaths = row_dataCT[i][2];                
             }
-
-
 
   
           var options = {

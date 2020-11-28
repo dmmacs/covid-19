@@ -23,47 +23,23 @@
         myData.addColumn('number', 'Positivity Rate');
         myData.addColumn('number', 'Positivity Rate 7 day average')
 
-        var splt = row_data1[0][0].split("-");
+        var splt = row_dataUS[0][0].split("-");
         var year = parseInt(splt[0]);
         var month = parseInt(splt[1]) - 1;
         var day = parseInt(splt[2]);
-        var prevCases = row_data1[0][1];
-        var prevTests = row_data1[0][3]
+        var prevCases = row_dataUS[0][1];
+        var prevTests = row_dataUS[0][3]
 
-        for (i = 1; i < row_data1.length; i++) {
-                var splt = row_data1[i][0].split("-");
+        for (i = 1; i < row_dataUS.length; i++) {
+                var splt = row_dataUS[i][0].split("-");
                 var year = parseInt(splt[0]);
                 var month = parseInt(splt[1]) - 1;
                 var day = parseInt(splt[2]);
-                var cases = row_data1[i][1];
-                var dailycases = cases - prevCases;
-                if (dailycases < 0)
-                {
-                  dailycases = 0;
-                }
-
-                var totalTests = row_data1[i][3]
-                var dailyTests = totalTests - prevTests;
-                if (dailyTests < 0)
-                {
-                  dailyTests = 0;
-                }
-                // dailycases /= pop
-                ave = row_data1[i][4];
-                // console.log(dailycases,ave)
-                
-                totalTests = row_data1[i][3]
-                ave = dailycases / dailyTests * 100
-                console.log(dailycases, dailyTests, ave, row_data1[i][5])
                 myData.addRows([
-                    [{v: new Date(year,month,day)},ave, row_data1[i][5]]
+                    [{v: new Date(year,month,day)},row_dataUS[i][3], row_dataUS[i][5]]
                 ]);
-                prevCases = row_data1[i][1];
-                prevTests = row_data1[i][3];
                 // prevDeaths = row_dataCT[i][2];                
             }
-
-
 
   
           var options = {
