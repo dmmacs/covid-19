@@ -137,6 +137,13 @@ def createOutData(jsonData, varName):
         test_pos_vals.append(pos_inc)
         test_neg_vals.append(neg_inc)
 
+        if varName == "row_dataAL":
+            if neg_inc < 0:
+                print("Got Here")
+                print(key, pos_inc, neg_inc, pos_inc / daily_tests * 100)
+            if daily_tests > 0:
+                print(key, pos_inc, neg_inc, pos_inc / daily_tests * 100)
+            # print(sum(test_pos_vals), test_pos_vals[-1])
         denom = sum(test_pos_vals) + sum(test_neg_vals)
         if denom > 0:
             average = sum(test_pos_vals) / (sum(test_pos_vals) + sum(test_neg_vals)) * 100
@@ -328,7 +335,6 @@ if __name__ == "__main__":
     getAllCurrentData(stateData)
 
     end = time.time()
-
     print()
-    print(Path(__file__).stem + ' completed in ' + str(timedelta(seconds=end-start)) + ' ({:02.3F} secdonds)'.format(end-start))
+    print(Path(__file__).stem + ' completed in ' + str(timedelta(seconds=end-start)) + ' ({:02.3F} seconds)'.format(end-start))
 
